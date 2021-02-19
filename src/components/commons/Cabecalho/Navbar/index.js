@@ -21,6 +21,9 @@ const Navlink = styled.div`
 
 `
 
+const NavbarBase = styled.div`
+  
+`
 
 export default function Navbar() {
   return (

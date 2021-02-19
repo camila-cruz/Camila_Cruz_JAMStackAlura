@@ -4,17 +4,20 @@ import Navbar from './NavBar';
 
 
 function Logo() {
-  return <span>{"<me/>"}</span>
+  return <span>{"<Camila />"}</span>
 }
 
 const CabecalhoBase = styled.header`
-
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 `
 
 export default function Cabecalho() {
   return (
     <CabecalhoBase>
-      {/* <Logo /> */}
+      <Logo />
       <Navbar />
     </CabecalhoBase>
   )

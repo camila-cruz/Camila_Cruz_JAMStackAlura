@@ -4,6 +4,12 @@ import styled from 'styled-components';
 const CapaBase = styled.div`
   width: 100%;
   height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background-color: ${({ theme }) => theme.mainUi.background.light.primary};
 `
 
 export default function Capa({ title }) {
