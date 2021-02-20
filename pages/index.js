@@ -20,16 +20,25 @@ const cards = [
     title: 'Instalura 1',
     image: 'https://via.placeholder.com/300',
     text: 'Projeto do módulo 1 do Bootcamp JAMStack Alura',
+    destaque: false,
   },
   {
     title: 'Instalura 2',
     image: 'https://via.placeholder.com/300',
     text: 'Projeto do módulo 1 do Bootcamp JAMStack Alura',
+    destaque: false,
   },
   {
     title: 'Instalura 3',
     image: 'https://via.placeholder.com/300',
     text: 'Projeto do módulo 1 do Bootcamp JAMStack Alura',
+    destaque: false,
+  },
+  {
+    title: 'Instalura 4',
+    image: 'https://via.placeholder.com/300',
+    text: 'Projeto do módulo 1 do Bootcamp JAMStack Alura',
+    destaque: true,
   },
 ]
 
@@ -51,20 +60,38 @@ export default function Home() {
           </Grid.Row>
           <Grid.Row>
             {cards.map((card) => {
-              return (
-                <Grid.Col
-                  value={{
-                    xs: 12,
-                    md: 6,
-                    lg: 4,
-                  }}
-                  key={card.title}
-                  display="flex"
-                  justifyContent="center"
-                >
-                  <Card title={card.title} image={card.image} text={card.text} />
-                </Grid.Col>
-              )
+              if (!card.destaque) {
+                return (
+                  <Grid.Col
+                    value={{
+                      xs: 12,
+                      md: 6,
+                      lg: 4,
+                    }}
+                    key={card.title}
+                    display="flex"
+                    justifyContent="center"
+                  >
+                    <Card title={card.title} image={card.image} text={card.text} destaque={card.destaque} />
+                  </Grid.Col>
+                )
+              }
+            })}
+          </Grid.Row>
+          <Grid.Row>
+            {cards.map((card) => {
+              if (card.destaque) {
+                return (
+                  <Grid.Col
+                    value={12}
+                    key={card.title}
+                    display="flex"
+                    justifyContent="center"
+                  >
+                    <Card title={card.title} image={card.image} text={card.text} destaque={card.destaque} />
+                  </Grid.Col>
+                )
+              }
             })}
           </Grid.Row>
         </Grid.Container>
