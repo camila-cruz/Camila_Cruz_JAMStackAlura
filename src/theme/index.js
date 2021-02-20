@@ -37,7 +37,7 @@ export default {
         tertiary: colors.light.yellow,
       },
       dark: {
-        primary: "",
+        primary: colors.dark.white,
         secondary: ""
       }
     }
