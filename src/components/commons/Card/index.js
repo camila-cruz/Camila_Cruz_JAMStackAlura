@@ -5,8 +5,8 @@ import { CardWrapper } from './styles/CardWrapper';
 export default function Card({ title, image, text }) {
   return (
     <CardWrapper>
+      <CardWrapper.CardImage><img src={image} /></CardWrapper.CardImage>
       <CardWrapper.CardTitle>{title}</CardWrapper.CardTitle>
-      <CardWrapper.CardImage>{image}</CardWrapper.CardImage>
       <CardWrapper.CardText>{text}</CardWrapper.CardText>
     </CardWrapper>
   );
