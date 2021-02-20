@@ -10,13 +10,22 @@ const CapaBase = styled.div`
   justify-content: center;
 
   background-color: ${({ theme }) => theme.mainUi.background.light.secondary};
+  color: ${({ theme }) => theme.mainUi.text.light.primary};
+
+  & > h1 {
+    font-size: ${({ theme }) => theme.typography.h1.size[2]}px;
+  }
+
+  & > h3 {
+    font-size: ${({ theme }) => theme.typography.h3.size[0]}px;
+  }
 `
 
 export default function Capa({ title }) {
   return (
     <CapaBase>
       <h1>{title}</h1>
-      <p>Portfolio</p>
+      <h3>Portfolio</h3>
     </CapaBase>
   )
 }

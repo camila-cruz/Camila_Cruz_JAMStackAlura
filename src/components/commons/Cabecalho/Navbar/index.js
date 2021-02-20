@@ -18,16 +18,20 @@ const links = [
 ]
 
 const Navlink = styled.div`
-
+  text-transform: uppercase;
+  font-size: ${({ theme }) => theme.typography.paragraph.size[1]}px;
+  font-weight: ${({ theme }) => theme.weight.bold};
 `
 
 const NavbarBase = styled.div`
-  
+  min-width: 200px;
+  display: flex;
+  justify-content: space-between;
 `
 
 export default function Navbar() {
   return (
-    <>
+    <NavbarBase>
       {links.map((link) => {
         return (
           <Navlink href={link.url} key={link.url}>
@@ -35,6 +39,6 @@ export default function Navbar() {
           </Navlink>
         )
       })}
-    </>
+    </NavbarBase>
   );
 }
