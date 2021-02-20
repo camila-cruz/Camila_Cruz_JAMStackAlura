@@ -1,30 +1,35 @@
-const color = {
+const colors = {
   light: {
-    yellow: '#FFF2BD',
-    purple: '#3C2959',
-    blue: ''
+    yellow: '#F3CF77',
+    lightYellow: '#F6E8CA',
+    purple: '#B692C0',  // #3C2959
+    blue: '#C1DEDC',
+    brown: '#64463A',
+    white: '#EFEFEF',
   },
   dark: {
-    yellow: '#FFF7CC',
-    purple: '',
-    blue: ''
+    yellow: '#FFD879',
+    purple: '#BB7BAE',
+    blue: '#21A4B5',
+    brown: '#7F5045',
+    green: '#98BA52',
   }
 }
 export default {
   mainUi: {
     background: {
       light: {
-        primary: color.light.yellow,
-        secondary: color.dark.yellow,
+        primary: colors.light.white,
+        secondary: colors.dark.yellow,
       },
       dark: {
-        primary: color.light.purple,
+        primary: colors.light.purple,
         secondary: ""
       }
     },
     text: {
       light: {
-        primary: color.light.purple,
+        primary: colors.light.purple,
         secondary: ""
       },
       dark: {
@@ -40,54 +45,43 @@ export default {
     info: "",
     disabled: "",
   },
-  spacing: [],
-  border: [],
+  spacing: [8, 16, 32, 45],
+  border: [6, 8, 12, 16],
+  weight: {
+    light: 300,
+    semiLight: 350,
+    regular: 400,
+    bold: 700,
+    extraBold: 900,
+  },
   typography: {
     h1: {
-      fontFace: "",
+      fontFamily: "",
       weight: "",
       lineHeight: 0,
-      size: [],
+      size: [90, 64, 48, 32, 28, 24],
     },
     h2: {
-      fontFace: "",
+      fontFamily: "",
       weight: "",
       lineHeight: 0,
-      size: [],
+      size: [28, 24, 20, 18],
     },
     h3: {
-      fontFace: "",
+      fontFamily: "",
       weight: "",
       lineHeight: 0,
-      size: [],
+      size: [20, 18],
     },
     paragraph: {
-      fontFace: "",
+      fontFamily: "",
       lineHeight: 0,
-      variant: [
-        {
-          weight: "",
-          size: [],
-        },
-        {
-          weight: "",
-          size: [],
-        },
-      ],
+      size: [16, 14],
     },
     link: {
-      fontFace: "",
+      fontFamily: "",
       lineHeight: 0,
-      variant: [
-        {
-          weight: "",
-          size: [],
-        },
-        {
-          weight: "",
-          size: [],
-        },
-      ],
+      size: [16, 14],
     }
   }
 }

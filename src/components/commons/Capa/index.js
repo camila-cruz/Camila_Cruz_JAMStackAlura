@@ -9,7 +9,7 @@ const CapaBase = styled.div`
   align-items: center;
   justify-content: center;
 
-  background-color: ${({ theme }) => theme.mainUi.background.light.primary};
+  background-color: ${({ theme }) => theme.mainUi.background.light.secondary};
 `
 
 export default function Capa({ title }) {
