@@ -15,7 +15,9 @@ export const WrapperProjetos = styled.main`
     `
   })}
 
-  background-color: ${({ theme }) => theme.mainUi.background.light.primary};
+  /* background-color: ${({ theme }) => theme.mainUi.background.light.primary}; */
+  background: ${({ theme }) => theme.mainUi.background.light.primary} url('/images/gray-honeycomb-empty.svg') no-repeat right bottom;
+  background-size: 300px auto;
 
   & > div {
     display: flex;

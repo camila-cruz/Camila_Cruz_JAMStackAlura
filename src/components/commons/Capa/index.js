@@ -9,8 +9,9 @@ const CapaBase = styled.div`
   align-items: center;
   justify-content: center;
 
-  background-color: ${({ theme }) => theme.mainUi.background.light.secondary};
+  /* background-color: ${({ theme }) => theme.mainUi.background.light.secondary}; */
   color: ${({ theme }) => theme.mainUi.text.light.primary};
+  background: ${({ theme }) => theme.mainUi.background.light.secondary} url('/images/yellow-honeycomb.svg');
 
   & > h1 {
     font-size: ${({ theme }) => theme.typography.h1.size[2]}px;
