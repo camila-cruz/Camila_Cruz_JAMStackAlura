@@ -2,7 +2,7 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import { breakpointsMedia } from '../../../theme/utils/breakpointsMedia';
 import { Grid } from '../../foundation/layout/Grid';
-import Navbar from './NavBar';
+import Navbar from './Navbar';
 import Navigation from 'react-sticky-nav';
 
 
