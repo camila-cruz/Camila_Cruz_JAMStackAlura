@@ -23,6 +23,9 @@ const Container = styled.div`
       padding-left: 9px; 
     `,
   })}
+
+  ${propToStyle('minWidth')}
+  ${propToStyle('maxWidth')}
 `;
 
 const Col = styled.div`
@@ -87,6 +90,7 @@ const Col = styled.div`
   ${propToStyle('flexDirection')}
   ${propToStyle('alignItems')}
   ${propToStyle('justifyContent')}
+  ${propToStyle('padding')}
 `;
 
 Col.defaultProps = {
@@ -100,6 +104,8 @@ const Row = styled.div`
   margin-right: -16px;
   margin-left: -16px;
   width: 100%;
+
+  ${propToStyle('width')}
 `;
 
 export const Grid = {

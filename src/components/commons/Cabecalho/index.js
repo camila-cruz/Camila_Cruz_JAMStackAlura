@@ -1,14 +1,16 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import { breakpointsMedia } from '../../../theme/utils/breakpointsMedia';
+import { Grid } from '../../foundation/layout/Grid';
 import Navbar from './NavBar';
 
 
 function Logo() {
-  return <span>{"<Camila />"}</span>
+  return <span>{"<Camila/>"}</span>
 }
 
 const CabecalhoBase = styled.header`
-  padding: 16px;
+  padding: 16px 0px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -19,8 +21,31 @@ const CabecalhoBase = styled.header`
 export default function Cabecalho() {
   return (
     <CabecalhoBase>
-      <Logo />
-      <Navbar />
+      <Grid.Container
+        minWidth={{
+          md: '700px'
+        }}
+        maxWidth={{
+          md: '1000px',
+        }}
+      >
+        <Grid.Row
+          width="initial"
+        >
+          <Grid.Col
+            value={4}
+          >
+            <Logo />
+          </Grid.Col>
+          <Grid.Col
+            value={8}
+            display="flex"
+            justifyContent="flex-end"
+          >
+            <Navbar />
+          </Grid.Col>
+        </Grid.Row>
+      </Grid.Container>
     </CabecalhoBase>
   )
 }
