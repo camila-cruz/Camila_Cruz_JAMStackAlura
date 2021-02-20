@@ -5,6 +5,7 @@ const colors = {
     purple: '#B692C0',  // #3C2959
     blue: '#C1DEDC',
     brown: '#64463A',
+    lightBrown: '#512919',
     white: '#EFEFEF',
   },
   dark: {
@@ -29,8 +30,8 @@ export default {
     },
     text: {
       light: {
-        primary: colors.light.purple,
-        secondary: ""
+        primary: colors.light.lightBrown,
+        secondary: colors.light.purple,
       },
       dark: {
         primary: "",
@@ -49,10 +50,9 @@ export default {
   border: [6, 8, 12, 16],
   weight: {
     light: 300,
-    semiLight: 350,
-    regular: 400,
+    semiLight: 400,
+    regular: 600,
     bold: 700,
-    extraBold: 900,
   },
   typography: {
     h1: {
