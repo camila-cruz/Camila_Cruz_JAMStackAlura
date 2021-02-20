@@ -65,7 +65,7 @@ export default {
       fontFamily: "",
       weight: "",
       lineHeight: 0,
-      size: [28, 24, 20, 18],
+      size: [48, 32, 28, 24],
     },
     h3: {
       fontFamily: "",
