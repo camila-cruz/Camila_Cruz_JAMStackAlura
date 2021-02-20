@@ -46,6 +46,13 @@ export default {
     info: "",
     disabled: "",
   },
+  breakpoints: {
+    xs: 0,
+    sm: 480,
+    md: 768,
+    lg: 992,
+    xl: 1200,
+  },
   spacing: [8, 16, 32, 45],
   border: [6, 8, 12, 16],
   weight: {
