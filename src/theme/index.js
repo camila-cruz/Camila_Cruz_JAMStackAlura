@@ -6,7 +6,7 @@ const colors = {
     blue: '#C1DEDC',
     brown: '#512919',
     lightBrown: '#64463A',
-    white: '#EFEFEF',
+    white: '#F9F9F9',
   },
   dark: {
     yellow: '#FFD879',
@@ -14,6 +14,7 @@ const colors = {
     blue: '#21A4B5',
     brown: '#7F5045',
     green: '#98BA52',
+    white: '#EFEFEF',
   }
 }
 export default {
@@ -55,7 +56,7 @@ export default {
     lg: 992,
     xl: 1200,
   },
-  spacing: [8, 16, 32, 45],
+  spacing: [8, 16, 32, 45, 64],
   border: [6, 8, 12, 16],
   weight: {
     light: 300,
