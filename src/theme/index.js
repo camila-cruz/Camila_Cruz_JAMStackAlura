@@ -4,8 +4,8 @@ const colors = {
     lightYellow: '#F6E8CA',
     purple: '#B692C0',  // #3C2959
     blue: '#C1DEDC',
-    brown: '#64463A',
-    lightBrown: '#512919',
+    brown: '#512919',
+    lightBrown: '#64463A',
     white: '#EFEFEF',
   },
   dark: {
@@ -22,6 +22,7 @@ export default {
       light: {
         primary: colors.light.white,
         secondary: colors.dark.yellow,
+        tertiary: colors.light.brown,
       },
       dark: {
         primary: colors.light.purple,
@@ -30,8 +31,9 @@ export default {
     },
     text: {
       light: {
-        primary: colors.light.lightBrown,
+        primary: colors.light.brown,
         secondary: colors.light.purple,
+        tertiary: colors.light.yellow,
       },
       dark: {
         primary: "",
