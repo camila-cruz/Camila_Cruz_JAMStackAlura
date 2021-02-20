@@ -36,8 +36,8 @@ const cards = [
   },
   {
     title: 'Instalura 4',
-    image: 'https://via.placeholder.com/300',
-    text: 'Projeto do módulo 1 do Bootcamp JAMStack Alura',
+    image: 'https://conteudo.imguol.com.br/c/noticias/48/2021/02/20/robo-perseverance-quando-estava-pousando-em-marte-visto-do-foguete-que-auxiliou-em-sua-descida-1613825173266_v2_900x506.png',
+    text: 'Projeto do módulo 1 do Bootcamp JAMStack Alura em destaque nesse card que ocupa um baita espaço',
     destaque: true,
   },
 ]
