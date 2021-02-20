@@ -3,11 +3,16 @@ import styled, { css } from 'styled-components';
 import { breakpointsMedia } from '../../../theme/utils/breakpointsMedia';
 import { Grid } from '../../foundation/layout/Grid';
 import Navbar from './NavBar';
+import Navigation from 'react-sticky-nav';
 
 
 function Logo() {
   return <span>{"<Camila/>"}</span>
 }
+
+const NavigationStyle = css`
+  position: -webkit-sticky; /* Safari support */
+`;
 
 const CabecalhoBase = styled.header`
   padding: 16px 0px;
@@ -20,32 +25,34 @@ const CabecalhoBase = styled.header`
 
 export default function Cabecalho() {
   return (
-    <CabecalhoBase>
-      <Grid.Container
-        minWidth={{
-          md: '700px'
-        }}
-        maxWidth={{
-          md: '1000px',
-        }}
-      >
-        <Grid.Row
-          width="initial"
+    <Navigation style={NavigationStyle}>
+      <CabecalhoBase>
+        <Grid.Container
+          minWidth={{
+            md: '700px'
+          }}
+          maxWidth={{
+            md: '1000px',
+          }}
         >
-          <Grid.Col
-            value={4}
+          <Grid.Row
+            width="initial"
           >
-            <Logo />
-          </Grid.Col>
-          <Grid.Col
-            value={8}
-            display="flex"
-            justifyContent="flex-end"
-          >
-            <Navbar />
-          </Grid.Col>
-        </Grid.Row>
-      </Grid.Container>
-    </CabecalhoBase>
+            <Grid.Col
+              value={4}
+            >
+              <Logo />
+            </Grid.Col>
+            <Grid.Col
+              value={8}
+              display="flex"
+              justifyContent="flex-end"
+            >
+              <Navbar />
+            </Grid.Col>
+          </Grid.Row>
+        </Grid.Container>
+      </CabecalhoBase>
+    </Navigation>
   )
 }
