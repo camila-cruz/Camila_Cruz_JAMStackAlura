@@ -85,7 +85,7 @@ export default {
     },
     paragraph: {
       fontFamily: "",
-      lineHeight: 0,
+      lineHeight: 1.8,
       size: [16, 14],
     },
     link: {

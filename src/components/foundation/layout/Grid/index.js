@@ -26,6 +26,11 @@ const Container = styled.div`
 
   ${propToStyle('minWidth')}
   ${propToStyle('maxWidth')}
+  ${propToStyle('display')}
+  ${propToStyle('flexDirection')}
+  ${propToStyle('alignItems')}
+  ${propToStyle('justifyContent')}
+  ${propToStyle('padding')}
 `;
 
 const Col = styled.div`

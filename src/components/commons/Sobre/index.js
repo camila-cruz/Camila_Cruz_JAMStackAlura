@@ -1,6 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import { Grid } from '../../foundation/layout/Grid';
+import Text from '../../foundation/Text';
 
 const SobreBase = styled.div`
   padding:  ${({ theme }) => theme.spacing[2]}px;
@@ -11,12 +12,20 @@ const SobreBase = styled.div`
 export default function Sobre() {
   return (
     <SobreBase>
-      <Grid.Container>
+      <Grid.Container
+        display="flex"
+        flexDirection={{
+          xs: 'column',
+          md: 'row',
+        }}
+        justifyContent="center"
+        alignItems="center"
+      >
         <Grid.Row>
           <Grid.Col
             value={{
               xs: 12,
-              md: 4
+              md: 3
             }}
             offset={{
               xs: 0,
@@ -31,7 +40,7 @@ export default function Sobre() {
           <Grid.Col
             value={{
               xs: 12,
-              md: 5,
+              md: 6,
             }}
             offset={{
               xs: 0,
@@ -45,8 +54,28 @@ export default function Sobre() {
               md: 'flex-start',
             }}
           >
-            <h2>Olá, sou a Camila!</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum maxime atque dolore sunt, debitis, nulla totam asperiores iste aliquam laboriosam eligendi eius tempora unde, odio esse inventore dicta rerum possimus iusto odit enim dolor. Error possimus beatae quasi unde, tempore non dignissimos ipsum animi sit dolorum cumque dolor. Quam, ipsum!</p>    
+            <h2
+              style={{
+                marginTop: '16px',
+                marginBottom: '16px',
+              }}
+            >
+              Olá, eu sou a Camila!
+            </h2>
+            <Text
+              tag="p"
+              variant="paragraph"
+              textAlign={{
+                xs: 'center',
+                md: 'justify',
+              }}
+            >
+              Sou formada em Análise e Desenvolvimento de Sistemas pela FATEC São Caetano do Sul, mas não estou trabalhando na área.
+              Enquanto isso, faço pequenos projetos no GitHub e tento aprender tecnologias novas para me testar com novos desafios.
+              Sou da turma do front-end, mas adoro programar em Python e me aventuro com Django e Flask.
+              Atualmente, trabalho no setor público e estou sempre em busca de projetos open-source para contribuir, freelas e oportunidades de aprender e ensinar.
+              <Text variant="strong"> E aí, let's code together?</Text> 
+            </Text>    
           </Grid.Col>
         </Grid.Row>
       </Grid.Container>
