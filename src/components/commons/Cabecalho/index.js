@@ -4,11 +4,7 @@ import { breakpointsMedia } from '../../../theme/utils/breakpointsMedia';
 import { Grid } from '../../foundation/layout/Grid';
 import Navbar from './Navbar';
 import Navigation from 'react-sticky-nav';
-
-
-function Logo() {
-  return <span>{"<Camila/>"}</span>
-}
+import Logo from './Logo';
 
 const NavigationStyle = css`
   position: -webkit-sticky; /* Safari support */
