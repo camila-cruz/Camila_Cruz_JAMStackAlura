@@ -8,7 +8,9 @@ export default function Card({ title, image, text, link, ...props }) {
     <>
       {(props.destaque === true && (
         <CardWrapper.CardDestaque>
-          <CardWrapper.CardImage><img src={image} alt={`Imagem do projeto ${title}`}/></CardWrapper.CardImage>
+          <CardWrapper.CardImage as="a" href={link} target="_blank" style={{ textDecoration: 'none' }}>
+            <img src={image} alt={`Imagem do projeto ${title}`}/>
+          </CardWrapper.CardImage>
           <div>
             <CardWrapper.CardTitle>{title}</CardWrapper.CardTitle>
             <CardWrapper.CardText>
@@ -21,12 +23,13 @@ export default function Card({ title, image, text, link, ...props }) {
           </div>
         </CardWrapper.CardDestaque>
       )) || (
-        <CardWrapper as="a" href={link} target="_blank" style={{ textDecoration: 'none' }}>
-          <CardWrapper.CardImage>
+        <CardWrapper>
+          <CardWrapper.CardImage as="a" href={link} target="_blank" style={{ textDecoration: 'none' }}>
             <img src={image} alt={`Imagem do projeto ${title}`}/>
           </CardWrapper.CardImage>
-          <CardWrapper.CardTitle>{title}</CardWrapper.CardTitle>
-          {/* <CardWrapper.CardText>{text}</CardWrapper.CardText> */}
+          <CardWrapper.CardTitle>
+            {title}
+          </CardWrapper.CardTitle>
         </CardWrapper>
       )}
     </>

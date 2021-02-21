@@ -11,7 +11,6 @@ export const TextStyleVariantsMap = {
     line-height: ${({ theme }) => theme.typography.paragraph.lineHeight};
   `,
   link: css`
-    font-size: ${({ theme }) => theme.typography.paragraph.size[1]}px;
     font-weight: ${({ theme }) => theme.weight.bold};
 
     /* Efeito de hover */

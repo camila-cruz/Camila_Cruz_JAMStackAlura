@@ -28,6 +28,12 @@ CardWrapper.CardDefault = css`
 
   background-color: white;
   /* box-shadow: 2px 2px 10px #85738c; */
+
+  transition: 0.5s ease;
+
+  &:hover {
+    transform: scale(1.05);
+}
 `;
 
 CardWrapper.CardTitle = styled.div`
@@ -60,6 +66,7 @@ CardWrapper.CardDestaqueLabel = styled.div`
 CardWrapper.CardImage = styled.div`
   width: 100%;
   height: 100%;
+  border: 2px solid ${({ theme }) => theme.mainUi.background.light.secondary};
   
   & > img {
     height: 100%;
