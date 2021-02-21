@@ -20,7 +20,9 @@ const FooterIcon = styled.img`
 export default function Footer() {
   return (
     <FooterBase>
-      <FooterIcon src="/images/github.svg" alt="Ícone do GitHub" />
+      <a href="https://github.com/camila-cruz" target="_blank">
+        <FooterIcon src="/images/github.svg" alt="Ícone do GitHub" />
+      </a>
     </FooterBase>
   )
 }
