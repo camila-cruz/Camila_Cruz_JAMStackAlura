@@ -24,6 +24,26 @@ const Navlink = styled.a`
   text-transform: uppercase;
   font-size: ${({ theme }) => theme.typography.paragraph.size[1]}px;
   font-weight: ${({ theme }) => theme.weight.bold};
+
+  &:after {    
+    position: relative;
+    /* background: none repeat scroll 0 0 transparent; */
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    background: ${({ theme }) => theme.mainUi.text.light.primary};
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+  }
+
+  &:hover {
+    &:after { 
+      width: 100%;
+      left: 0; 
+    }
+  }
 `
 
 const NavbarBase = styled.div`
@@ -47,7 +67,7 @@ export default function Navbar() {
       {links.map((link) => {
         return (
           <Navlink href={link.url} key={link.url}>
-            <Text>{link.texto}</Text>
+            <Text variant="link">{link.texto}</Text>
           </Navlink>
         )
       })}
