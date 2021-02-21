@@ -18,27 +18,31 @@ const Title = styled.h1`
 
 const cards = [
   {
-    title: 'Instalura 1',
-    image: 'https://via.placeholder.com/300',
-    text: 'Projeto do módulo 1 do Bootcamp JAMStack Alura',
+    title: 'The Blacklist: The List',
+    image: '/images/projetos/the-blacklist.png',
+    text: 'A lista da série The Blacklist.',
+    link: 'https://github.com/camila-cruz/the-blacklist',
     destaque: false,
   },
   {
-    title: 'Instalura 2',
-    image: 'https://via.placeholder.com/300',
-    text: 'Projeto do módulo 1 do Bootcamp JAMStack Alura',
+    title: 'Sistema SOS Nova Vida',
+    image: '/images/projetos/sos-nova-vida.png',
+    text: 'Sistema integrado com website para a SOS Nova Vida.',
+    link: 'https://github.com/camila-cruz/sos-nova-vida',
     destaque: false,
   },
   {
-    title: 'Instalura 3',
-    image: 'https://via.placeholder.com/300',
-    text: 'Projeto do módulo 1 do Bootcamp JAMStack Alura',
+    title: 'Anagram Board',
+    image: '/images/projetos/anagram-board.png',
+    text: 'roque as letras de lugar e forme anagramas!',
+    link: 'https://github.com/camila-cruz/anagram-board',
     destaque: false,
   },
   {
-    title: 'Instalura 4',
-    image: 'https://conteudo.imguol.com.br/c/noticias/48/2021/02/20/robo-perseverance-quando-estava-pousando-em-marte-visto-do-foguete-que-auxiliou-em-sua-descida-1613825173266_v2_900x506.png',
-    text: 'Projeto do módulo 1 do Bootcamp JAMStack Alura em destaque nesse card que ocupa um baita espaço',
+    title: 'Inteligência Artificial',
+    image: '/images/projetos/inteligencia-artificial.png',
+    text: 'Projetos e recursos para consulta e aprendizagem sobre IA.',
+    link: 'https://github.com/camila-cruz/inteligencia-artificial',
     destaque: true,
   },
 ]
@@ -74,7 +78,7 @@ export default function Home() {
                     display="flex"
                     justifyContent="center"
                   >
-                    <Card title={card.title} image={card.image} text={card.text} destaque={card.destaque} />
+                    <Card title={card.title} image={card.image} text={card.text} link={card.link} destaque={card.destaque} />
                   </Grid.Col>
                 )
               }
@@ -90,7 +94,7 @@ export default function Home() {
                     display="flex"
                     justifyContent="center"
                   >
-                    <Card title={card.title} image={card.image} text={card.text} destaque={card.destaque} />
+                    <Card title={card.title} image={card.image} text={card.text} link={card.link} destaque={card.destaque} />
                   </Grid.Col>
                 )
               }
