@@ -3,6 +3,15 @@ import styled, { css } from 'styled-components';
 import { breakpointsMedia } from '../../../../theme/utils/breakpointsMedia';
 
 export const CardWrapper = styled.div`
+  ${(props) => {
+    if (props.destaque) {
+      return CardWrapper.CardDestaque;
+    }
+    return CardWrapper.CardDefault;
+  }};
+`;
+
+CardWrapper.CardDefault = css`
   order: 2;
   display: flex;
   flex-direction: column;
@@ -19,7 +28,7 @@ export const CardWrapper = styled.div`
 
   background-color: white;
   /* box-shadow: 2px 2px 10px #85738c; */
-`
+`;
 
 CardWrapper.CardTitle = styled.div`
   position: relative;
@@ -32,6 +41,20 @@ CardWrapper.CardTitle = styled.div`
 
   background-color: ${({ theme }) => theme.mainUi.background.light.secondary};
   color: ${({ theme }) => theme.mainUi.text.light.primary};
+`;
+
+CardWrapper.CardDestaqueLabel = styled.div`
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+
+  font-size: ${({ theme }) => theme.typography.h3.size[0]}px;
+  font-weight: ${({ theme }) => theme.weight.bold};
+
+  background-color: ${({ theme }) => theme.mainUi.background.light.tertiary};
+  color: ${({ theme }) => theme.mainUi.text.light.tertiary};
 `
 
 CardWrapper.CardImage = styled.div`
@@ -43,14 +66,16 @@ CardWrapper.CardImage = styled.div`
     width: inherit;
     object-fit: cover;
   }
-`
+`;
 
 CardWrapper.CardText = styled.div`
   font-size: ${({ theme }) => theme.typography.paragraph.size[0]}px;
-`
+`;
 
 CardWrapper.CardDestaque = styled.div`
   order: 1;
+  position: relative;
+  
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -89,13 +114,21 @@ CardWrapper.CardDestaque = styled.div`
       margin-top: ${({ theme }) => theme.spacing[2]}px;
 
       & > div {
+        max-width: 340px;
+        height: 100%;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        max-width: 340px;
+        justify-content: space-between;
 
         & > ${CardWrapper.CardTitle} {
-          margin-bottom: 20px;
+          top: 0;
+          margin-bottom: 10px;
+        }
+
+        & > ${CardWrapper.CardDestaqueLabel} {
+          position: relative;
+          bottom: 0;
+          margin-top: 10px;
         }
 
         & > ${CardWrapper.CardText} {
@@ -117,4 +150,4 @@ CardWrapper.CardDestaque = styled.div`
       }
     `
   })}
-`
+`;

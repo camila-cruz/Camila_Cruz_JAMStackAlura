@@ -60,7 +60,7 @@ export default function Home() {
               <SectionTitle>Meus projetos</SectionTitle>
             </Grid.Col>
           </Grid.Row>
-          <Grid.Row>
+          <Grid.Row order={{ xs: 2, md: 0 }}>
             {cards.map((card) => {
               if (!card.destaque) {
                 return (
@@ -80,7 +80,7 @@ export default function Home() {
               }
             })}
           </Grid.Row>
-          <Grid.Row>
+          <Grid.Row order={1}>
             {cards.map((card) => {
               if (card.destaque) {
                 return (
