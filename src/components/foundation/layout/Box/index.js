@@ -1,10 +1,9 @@
-import React from 'react';
 import styled from 'styled-components';
 
 export const Box = styled.div`
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: space-between; 
-`
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between; 
+`;

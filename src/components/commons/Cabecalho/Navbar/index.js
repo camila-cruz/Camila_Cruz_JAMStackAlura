@@ -15,8 +15,8 @@ const links = [
   {
     texto: 'Contato',
     url: '/contato',
-  }
-]
+  },
+];
 
 const Navlink = styled.a`
   color: inherit;
@@ -24,7 +24,7 @@ const Navlink = styled.a`
   text-transform: uppercase;
   font-size: ${({ theme }) => theme.typography.paragraph.size[1]}px;
   font-weight: ${({ theme }) => theme.weight.bold};
-`
+`;
 
 const NavbarBase = styled.div`
   min-width: 200px;
@@ -37,20 +37,18 @@ const NavbarBase = styled.div`
     md: css`
       min-width: 300px;
       max-width: 350px;
-    `
+    `,
   })}
-`
+`;
 
 export default function Navbar() {
   return (
     <NavbarBase>
-      {links.map((link) => {
-        return (
-          <Navlink href={link.url} key={link.url}>
-            <Text variant="link">{link.texto}</Text>
-          </Navlink>
-        )
-      })}
+      {links.map((link) => (
+        <Navlink href={link.url} key={link.url}>
+          <Text variant="link">{link.texto}</Text>
+        </Navlink>
+      ))}
     </NavbarBase>
   );
 }

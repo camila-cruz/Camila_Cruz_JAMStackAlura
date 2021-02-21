@@ -1,4 +1,3 @@
-import React from 'react';
 import styled, { css } from 'styled-components';
 import { breakpointsMedia } from '../../../../theme/utils/breakpointsMedia';
 
@@ -61,7 +60,7 @@ CardWrapper.CardDestaqueLabel = styled.div`
 
   background-color: ${({ theme }) => theme.mainUi.background.light.tertiary};
   color: ${({ theme }) => theme.mainUi.text.light.tertiary};
-`
+`;
 
 CardWrapper.CardImage = styled.div`
   width: 100%;
@@ -171,6 +170,6 @@ CardWrapper.CardDestaque = styled.div`
           width: 100%;
         }
       }
-    `
+    `,
   })}
 `;

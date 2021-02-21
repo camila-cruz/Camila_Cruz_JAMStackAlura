@@ -1,6 +1,5 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
-import { breakpointsMedia } from '../../../theme/utils/breakpointsMedia';
+import styled from 'styled-components';
 import { Grid } from '../../foundation/layout/Grid';
 import Navbar from './Navbar';
 import Logo from './Logo';
@@ -17,14 +16,14 @@ const CabecalhoBase = styled.header`
   position: sticky;
   top: -1px;
   z-index: 999;
-`
+`;
 
 export default function Cabecalho() {
   return (
     <CabecalhoBase>
       <Grid.Container
         minWidth={{
-          md: '700px'
+          md: '700px',
         }}
         maxWidth={{
           md: '1000px',
@@ -48,5 +47,5 @@ export default function Cabecalho() {
         </Grid.Row>
       </Grid.Container>
     </CabecalhoBase>
-  )
+  );
 }

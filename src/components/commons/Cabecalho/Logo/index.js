@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 const LogoBase = styled.a`
   font-size: ${({ theme }) => theme.typography.h3.size[0]}px;
@@ -12,7 +12,7 @@ const LogoBase = styled.a`
 export default function Logo() {
   return (
     <LogoBase>
-      {"<Camila/>"}
+      {'<Camila/>'}
     </LogoBase>
-  )
+  );
 }

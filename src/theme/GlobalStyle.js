@@ -20,4 +20,4 @@ export const GlobalStyle = createGlobalStyle`
     flex: 1;
     flex-direction: column;
   }
-`
+`;

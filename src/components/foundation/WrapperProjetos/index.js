@@ -34,7 +34,7 @@ const cards = [
     link: 'https://github.com/camila-cruz/inteligencia-artificial',
     destaque: true,
   },
-]
+];
 
 const WrapperProjetosBase = styled.main`
   display: flex;
@@ -46,7 +46,7 @@ const WrapperProjetosBase = styled.main`
   ${breakpointsMedia({
     md: css`
       padding: ${({ theme }) => theme.spacing[4]}px 0;
-    `
+    `,
   })}
 
   /* background-color: ${({ theme }) => theme.mainUi.background.light.primary}; */
@@ -87,10 +87,17 @@ export default function WrapperProjetos() {
                   display="flex"
                   justifyContent="center"
                 >
-                  <Card title={card.title} image={card.image} text={card.text} link={card.link} destaque={card.destaque} />
+                  <Card
+                    title={card.title}
+                    image={card.image}
+                    text={card.text}
+                    link={card.link}
+                    destaque={card.destaque}
+                  />
                 </Grid.Col>
-              )
+              );
             }
+            return null;
           })}
         </Grid.Row>
         <Grid.Row order={1}>
@@ -103,13 +110,20 @@ export default function WrapperProjetos() {
                   display="flex"
                   justifyContent="center"
                 >
-                  <Card title={card.title} image={card.image} text={card.text} link={card.link} destaque={card.destaque} />
+                  <Card
+                    title={card.title}
+                    image={card.image}
+                    text={card.text}
+                    link={card.link}
+                    destaque={card.destaque}
+                  />
                 </Grid.Col>
-              )
+              );
             }
+            return null;
           })}
         </Grid.Row>
       </Grid.Container>
     </WrapperProjetosBase>
-  )
+  );
 }

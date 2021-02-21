@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { Grid } from '../../foundation/layout/Grid';
 import Text from '../../foundation/Text';
 
@@ -25,7 +25,7 @@ export default function Sobre() {
           <Grid.Col
             value={{
               xs: 12,
-              md: 3
+              md: 3,
             }}
             offset={{
               xs: 0,
@@ -35,7 +35,7 @@ export default function Sobre() {
             justifyContent="center"
             alignItems="center"
           >
-            <img src="/images/avatar.png" alt="Avatar da Camila" srcset="" style={{ width: '300px'}}/>
+            <img src="/images/avatar.png" alt="Avatar da Camila" srcSet="" style={{ width: '300px' }} />
           </Grid.Col>
           <Grid.Col
             value={{
@@ -74,11 +74,11 @@ export default function Sobre() {
               Enquanto isso, faço pequenos projetos no GitHub e tento aprender tecnologias novas para me testar com novos desafios.
               Sou da turma do front-end, mas adoro programar em Python e me aventuro com Django e Flask.
               Atualmente, trabalho no setor público e estou sempre em busca de projetos open-source para contribuir, freelas e oportunidades de aprender e ensinar.
-              <Text variant="strong"> E aí, let's code together?</Text> 
-            </Text>    
+              <Text variant="strong"> E aí, let's code together?</Text>
+            </Text>
           </Grid.Col>
         </Grid.Row>
       </Grid.Container>
     </SobreBase>
-  )
+  );
 }

@@ -24,5 +24,6 @@ export function propToStyle(propName) {
         },
       });
     }
+    return null;
   };
 }

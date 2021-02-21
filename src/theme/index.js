@@ -2,7 +2,7 @@ const colors = {
   light: {
     yellow: '#F3CF77',
     lightYellow: '#F6E8CA',
-    purple: '#B692C0',  // #3C2959
+    purple: '#B692C0', // #3C2959
     blue: '#C1DEDC',
     brown: '#512919',
     lightBrown: '#64463A',
@@ -15,8 +15,9 @@ const colors = {
     brown: '#7F5045',
     green: '#98BA52',
     white: '#EFEFEF',
-  }
-}
+  },
+};
+
 export default {
   mainUi: {
     background: {
@@ -27,8 +28,8 @@ export default {
       },
       dark: {
         primary: colors.light.purple,
-        secondary: ""
-      }
+        secondary: '',
+      },
     },
     text: {
       light: {
@@ -38,16 +39,16 @@ export default {
       },
       dark: {
         primary: colors.dark.white,
-        secondary: ""
-      }
-    }
+        secondary: '',
+      },
+    },
   },
   actions: {
-    error: "",
-    warning: "",
-    success: "",
-    info: "",
-    disabled: "",
+    error: '',
+    warning: '',
+    success: '',
+    info: '',
+    disabled: '',
   },
   breakpoints: {
     xs: 0,
@@ -66,32 +67,32 @@ export default {
   },
   typography: {
     h1: {
-      fontFamily: "",
-      weight: "",
+      fontFamily: '',
+      weight: '',
       lineHeight: 0,
       size: [90, 64, 48, 32, 28, 24],
     },
     h2: {
-      fontFamily: "",
-      weight: "",
+      fontFamily: '',
+      weight: '',
       lineHeight: 0,
       size: [48, 32, 28, 24],
     },
     h3: {
-      fontFamily: "",
-      weight: "",
+      fontFamily: '',
+      weight: '',
       lineHeight: 0,
       size: [20, 18],
     },
     paragraph: {
-      fontFamily: "",
+      fontFamily: '',
       lineHeight: 1.8,
       size: [16, 14],
     },
     link: {
-      fontFamily: "",
+      fontFamily: '',
       lineHeight: 0,
       size: [16, 14],
-    }
-  }
-}
+    },
+  },
+};

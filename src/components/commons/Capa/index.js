@@ -20,13 +20,14 @@ const CapaBase = styled.div`
   & > h3 {
     font-size: ${({ theme }) => theme.typography.h3.size[0]}px;
   }
-`
+`;
 
+// eslint-disable-next-line react/prop-types
 export default function Capa({ title }) {
   return (
     <CapaBase>
       <h1>{title}</h1>
       <h3>Portfolio</h3>
     </CapaBase>
-  )
+  );
 }
