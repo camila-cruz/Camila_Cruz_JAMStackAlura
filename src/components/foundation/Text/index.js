@@ -13,6 +13,26 @@ export const TextStyleVariantsMap = {
   link: css`
     font-size: ${({ theme }) => theme.typography.paragraph.size[1]}px;
     font-weight: ${({ theme }) => theme.weight.bold};
+
+    /* Efeito de hover */
+    &:after {    
+      position: relative;
+      bottom: 0;
+      content: "";
+      display: block;
+      height: 2px;
+      left: 50%;
+      background: ${({ theme }) => theme.mainUi.text.light.primary};
+      transition: width 0.3s ease 0s, left 0.3s ease 0s;
+      width: 0;
+    }
+
+    &:hover {
+      &:after { 
+        width: 100%;
+        left: 0; 
+      }
+    }
   `,
   strong: css`
     font-weight: ${({ theme }) => theme.weight.bold};
