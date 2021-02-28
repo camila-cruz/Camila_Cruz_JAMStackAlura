@@ -70,11 +70,15 @@ export default function Sobre() {
                 md: 'justify',
               }}
             >
-              Sou formada em Análise e Desenvolvimento de Sistemas pela FATEC São Caetano do Sul, mas não estou trabalhando na área.
-              Enquanto isso, faço pequenos projetos no GitHub e tento aprender tecnologias novas para me testar com novos desafios.
-              Sou da turma do front-end, mas adoro programar em Python e me aventuro com Django e Flask.
-              Atualmente, trabalho no setor público e estou sempre em busca de projetos open-source para contribuir, freelas e oportunidades de aprender e ensinar.
-              <Text variant="strong"> E aí, let's code together?</Text>
+              Sou formada em Análise e Desenvolvimento de Sistemas pela FATEC São Caetano do Sul,
+              mas não estou trabalhando na área.
+              Enquanto isso, faço pequenos projetos no GitHub e tento aprender tecnologias novas
+              para me testar com novos desafios.
+              Sou da turma do front-end, mas adoro programar
+              em Python e me aventuro com Django e Flask.
+              Atualmente, trabalho no setor público e estou sempre em busca de projetos
+              open-source para contribuir, freelas e oportunidades de aprender e ensinar.
+              <Text variant="strong"> E aí, let&apos;s code together?</Text>
             </Text>
           </Grid.Col>
         </Grid.Row>
