@@ -18,12 +18,14 @@ const InputWrapper = styled.div`
 const Input = styled(Text)`
   width: 100%;
   height: 48px;
-  border: 1px solid black;
+  border: 1px solid ${({ theme }) => theme.mainUi.background.light.tertiary};;
   border-radius: 10px;
   padding: 14px 6px;
+  margin-top: 4px;
+  margin-bottom: 16px;
   outline: 0;
   &:focus {
-    box-shadow: 0 0 3pt 2pt black;
+    box-shadow: 0 0 3pt 1pt ${({ theme }) => theme.mainUi.background.light.tertiary};;
   }
 `;
 
