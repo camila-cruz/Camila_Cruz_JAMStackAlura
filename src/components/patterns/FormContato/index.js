@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { Grid } from '../../foundation/layout/Grid';
 import { Button } from '../../commons/Button';
 import TextField from '../../forms/TextField';
+import Text from '../../foundation/Text';
 
 const FormWrapper = styled.div`
   display: flex;
@@ -16,10 +17,12 @@ const FormWrapper = styled.div`
   padding-top: 80px;
   padding-bottom: 80px;
 
+  background-color: ${({ theme }) => theme.mainUi.background.light.primary};
+  color: ${({ theme }) => theme.mainUi.text.light.primary};
+
   /* 
   height: 100%;
   clip-path: polygon(25% 10%, 75% 10%, 100% 50%, 75% 90%, 25% 90%, 0% 50%); */
-  background-color: white;
 `;
 
 function FormContent() {
@@ -63,27 +66,27 @@ function FormContent() {
 
   return (
     <form onSubmit={onSubmit}>
-      <h2>Envie sua mensagem</h2>
+      <Text as="h2" variant="h2" size="3" marginBottom="40px">Envie sua mensagem</Text>
 
       <div>
-        <label htmlFor="name">
+        <Text as="label" variant="label" htmlFor="name">
           Nome
           <TextField type="text" name="name" id="name" value={messageInfo.name} onChange={handleChange} />
-        </label>
+        </Text>
       </div>
 
       <div>
-        <label htmlFor="email">
+        <Text as="label" variant="label" htmlFor="email">
           E-mail
           <TextField type="email" name="email" id="email" value={messageInfo.email} onChange={handleChange} />
-        </label>
+        </Text>
       </div>
 
       <div>
-        <label htmlFor="message">
+        <Text as="label" variant="label" htmlFor="message">
           Mensagem
           <TextField type="text" name="message" id="message" value={messageInfo.message} onChange={handleChange} textarea />
-        </label>
+        </Text>
       </div>
 
       <Button type="submit" variant="tertiary" fullWidth>

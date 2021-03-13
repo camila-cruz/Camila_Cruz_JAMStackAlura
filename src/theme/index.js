@@ -90,7 +90,12 @@ const typography = {
     lineHeight: 0,
     size: [16, 14],
   },
-
+  label: {
+    fontFamily: '',
+    fontWeight: weight.regular,
+    lineHeight: 0,
+    size: [18],
+  },
 };
 
 export default {
