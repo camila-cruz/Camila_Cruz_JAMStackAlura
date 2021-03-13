@@ -86,7 +86,7 @@ function FormContent() {
         </label>
       </div>
 
-      <Button type="submit">
+      <Button type="submit" variant="tertiary" fullWidth>
         Enviar
       </Button>
     </form>
