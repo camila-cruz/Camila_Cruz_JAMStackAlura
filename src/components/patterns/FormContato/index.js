@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { Grid } from '../../foundation/layout/Grid';
 import { Button } from '../../commons/Button';
 import TextField from '../../forms/TextField';
 
@@ -12,9 +13,11 @@ const FormWrapper = styled.div`
   justify-content: center;
   align-self: center;
 
-  /* min-width: 500px;
-  max-width: 700px;
+  padding-top: 80px;
+  padding-bottom: 80px;
 
+  /* 
+  height: 100%;
   clip-path: polygon(25% 10%, 75% 10%, 100% 50%, 75% 90%, 25% 90%, 0% 50%); */
   background-color: white;
 `;
@@ -93,9 +96,21 @@ function FormContent() {
 // eslint-disable-next-line react/prop-types
 export default function FormContato({ props }) {
   return (
-    // eslint-disable-next-line react/jsx-props-no-spreading
-    <FormWrapper {...props}>
-      <FormContent />
-    </FormWrapper>
+    <Grid.Row
+      marginLeft={0}
+      marginRight={0}
+      flex={1}
+      justifyContent="center"
+    >
+      <Grid.Col
+        value={{ xs: 12, md: 6, lg: 4 }}
+        alignSelf="center"
+      >
+        {/* eslint-disable-next-line react/jsx-props-no-spreading */}
+        <FormWrapper {...props}>
+          <FormContent />
+        </FormWrapper>
+      </Grid.Col>
+    </Grid.Row>
   );
 }
