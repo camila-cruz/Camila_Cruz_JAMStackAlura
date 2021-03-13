@@ -148,12 +148,13 @@ CardWrapper.CardDestaque = styled.div`
             padding-top: 20px;
             text-decoration: none;
 
-            & > img {
+            & > span > img {
               height: ${({ theme }) => theme.typography.paragraph.size[0]}px;
               filter: invert(16%) sepia(66%) saturate(565%) hue-rotate(332deg) brightness(90%) contrast(93%);
               /* Para centralizar a seta */
               vertical-align: middle;
               padding-bottom: 2px;
+              padding-left: 4px;
             }
           }
         }

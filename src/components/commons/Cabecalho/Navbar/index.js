@@ -2,6 +2,7 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import { breakpointsMedia } from '../../../../theme/utils/breakpointsMedia';
 import Text from '../../../foundation/Text';
+import Link from '../../Link';
 
 const links = [
   {
@@ -18,12 +19,16 @@ const links = [
   },
 ];
 
-const Navlink = styled.a`
+const Navlink = styled(Link)`
   color: inherit;
   text-decoration: none;
   text-transform: uppercase;
-  font-size: ${({ theme }) => theme.typography.paragraph.size[1]}px;
   font-weight: ${({ theme }) => theme.weight.bold};
+
+  /* Força o link a ter tamanho menor do que o padrão */
+  & > span {
+    font-size: ${({ theme }) => theme.typography.paragraph.size[1]}px;
+  }
 `;
 
 const NavbarBase = styled.div`

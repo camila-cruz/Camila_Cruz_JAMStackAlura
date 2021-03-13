@@ -18,31 +18,83 @@ const colors = {
   },
 };
 
-export default {
-  mainUi: {
-    background: {
-      light: {
-        primary: colors.light.white,
-        secondary: colors.dark.yellow,
-        tertiary: colors.light.brown,
-      },
-      dark: {
-        primary: colors.light.purple,
-        secondary: '',
-      },
+const mainUi = {
+  background: {
+    light: {
+      primary: colors.light.white,
+      secondary: colors.dark.yellow,
+      tertiary: colors.light.brown,
     },
-    text: {
-      light: {
-        primary: colors.light.brown,
-        secondary: colors.light.purple,
-        tertiary: colors.light.yellow,
-      },
-      dark: {
-        primary: colors.dark.white,
-        secondary: '',
-      },
+    dark: {
+      primary: colors.light.purple,
+      secondary: '',
     },
   },
+  text: {
+    light: {
+      primary: colors.light.brown,
+      secondary: colors.light.purple,
+      tertiary: colors.light.yellow,
+    },
+    dark: {
+      primary: colors.dark.white,
+      secondary: '',
+    },
+  },
+};
+
+const spacing = [8, 16, 32, 45, 64];
+const border = [6, 8, 12, 16];
+
+const weight = {
+  light: 300,
+  semiLight: 400,
+  regular: 600,
+  bold: 700,
+};
+
+const typography = {
+  h1: {
+    fontFamily: '',
+    fontWeight: '',
+    lineHeight: 0,
+    size: [90, 64, 48, 32, 28, 24],
+  },
+  h2: {
+    fontFamily: '',
+    fontWeight: '',
+    lineHeight: 0,
+    size: [48, 32, 28, 24],
+  },
+  h3: {
+    fontFamily: '',
+    fontWeight: '',
+    lineHeight: 0,
+    size: [20, 18],
+  },
+  paragraph: {
+    fontFamily: '',
+    fontWeight: weight.light,
+    lineHeight: 1.8,
+    size: [16, 14],
+  },
+  link: {
+    fontFamily: '',
+    fontWeight: weight.bold,
+    lineHeight: 0,
+    size: [16, 14],
+  },
+  inputText: {
+    fontFamily: '',
+    fontWeight: weight.regular,
+    lineHeight: 0,
+    size: [16, 14],
+  },
+
+};
+
+export default {
+  mainUi,
   actions: {
     error: '',
     warning: '',
@@ -57,42 +109,8 @@ export default {
     lg: 992,
     xl: 1200,
   },
-  spacing: [8, 16, 32, 45, 64],
-  border: [6, 8, 12, 16],
-  weight: {
-    light: 300,
-    semiLight: 400,
-    regular: 600,
-    bold: 700,
-  },
-  typography: {
-    h1: {
-      fontFamily: '',
-      weight: '',
-      lineHeight: 0,
-      size: [90, 64, 48, 32, 28, 24],
-    },
-    h2: {
-      fontFamily: '',
-      weight: '',
-      lineHeight: 0,
-      size: [48, 32, 28, 24],
-    },
-    h3: {
-      fontFamily: '',
-      weight: '',
-      lineHeight: 0,
-      size: [20, 18],
-    },
-    paragraph: {
-      fontFamily: '',
-      lineHeight: 1.8,
-      size: [16, 14],
-    },
-    link: {
-      fontFamily: '',
-      lineHeight: 0,
-      size: [16, 14],
-    },
-  },
+  spacing,
+  border,
+  weight,
+  typography,
 };

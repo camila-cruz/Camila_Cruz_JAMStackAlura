@@ -5,46 +5,34 @@ import PropTypes from 'prop-types';
 import { propToStyle } from '../../../theme/utils/propToStyle';
 
 export const TextStyleVariantsMap = {
-  paragraph: css`
-    font-size: ${({ theme }) => theme.typography.paragraph.size[0]}px;
-    font-weight: ${({ theme }) => theme.weight.light};
-    line-height: ${({ theme }) => theme.typography.paragraph.lineHeight};
-  `,
-  link: css`
-    font-weight: ${({ theme }) => theme.weight.bold};
-
-    /* Efeito de hover */
-    &:after {    
-      position: relative;
-      bottom: 0;
-      content: "";
-      display: block;
-      height: 2px;
-      left: 50%;
-      background: ${({ theme }) => theme.mainUi.text.light.primary};
-      transition: width 0.3s ease 0s, left 0.3s ease 0s;
-      width: 0;
-    }
-
-    &:hover {
-      &:after { 
-        width: 100%;
-        left: 0; 
-      }
-    }
-  `,
   strong: css`
     font-weight: ${({ theme }) => theme.weight.bold};
   `,
 };
 
 const TextBase = styled.span`
-  ${(props) => TextStyleVariantsMap[props.variant]}
+  ${({ theme, variant }) => {
+    if (theme.typography[variant]) {
+      return css`
+        font-size: ${theme.typography[variant].size[0]}px;
+        font-weight: ${theme.typography[variant].fontWeight};
+        line-height: ${theme.typography[variant].lineHeight};
+        color: ${theme.typography[variant].color};
+      `;
+    }
+    return TextStyleVariantsMap[variant];
+  }}
+
   ${propToStyle('textAlign')}
+  ${propToStyle('marginBottom')}
 `;
 
-// eslint-disable-next-line object-curly-newline
-export default function Text({ tag, variant, children, ...props }) {
+export default function Text({
+  tag,
+  variant,
+  children,
+  ...props
+}) {
   return (
     <TextBase
       as={tag}
