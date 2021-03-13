@@ -2,6 +2,7 @@
 import React from 'react';
 import { CardWrapper } from './styles/CardWrapper';
 import Text from '../../foundation/Text';
+import Link from '../Link';
 
 // eslint-disable-next-line react/prop-types
 export default function Card({ title, image, text, link, destaque }) {
@@ -16,10 +17,12 @@ export default function Card({ title, image, text, link, destaque }) {
             <CardWrapper.CardTitle>{title}</CardWrapper.CardTitle>
             <CardWrapper.CardText>
               {text}
-              <Text tag="a" variant="link" href={link} target="_blank">
-                Veja o repositório
-                <img src="/images/arrow.svg" alt="Link para o repositório" />
-              </Text>
+              <Link href={link} target="_blank">
+                <Text variant="link">
+                  Veja o repositório
+                  <img src="/images/arrow.svg" alt="Link para o repositório" />
+                </Text>
+              </Link>
             </CardWrapper.CardText>
             <CardWrapper.CardDestaqueLabel>Destaque</CardWrapper.CardDestaqueLabel>
           </div>
