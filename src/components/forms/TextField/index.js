@@ -34,6 +34,7 @@ Input.defaultProps = {
 
 export default function TextField({
   placeholder,
+  name,
   id,
   type,
   textarea,
@@ -44,6 +45,7 @@ export default function TextField({
       <Input
         tag={textarea ? 'textarea' : undefined}
         placeholder={placeholder}
+        name={name}
         id={id}
         type={type}
         onChange={onChange}
@@ -53,16 +55,17 @@ export default function TextField({
 }
 
 TextField.defaultProps = {
-  placeholder: '',
+  placeholder: null,
   type: 'text',
-  textarea: null,
+  textarea: false,
   onChange: null,
 };
 
 TextField.propTypes = {
   placeholder: PropTypes.string,
   id: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
   onChange: PropTypes.func,
   type: PropTypes.string,
-  textarea: PropTypes.string,
+  textarea: PropTypes.bool,
 };
