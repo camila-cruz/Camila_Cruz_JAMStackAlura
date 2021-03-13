@@ -24,6 +24,7 @@ const Input = styled(Text)`
   margin-top: 4px;
   margin-bottom: 16px;
   outline: 0;
+
   &:focus {
     box-shadow: 0 0 3pt 1pt ${({ theme }) => theme.mainUi.background.light.tertiary};;
   }
@@ -44,14 +45,25 @@ export default function TextField({
 }) {
   return (
     <InputWrapper>
-      <Input
-        tag={textarea ? 'textarea' : undefined}
-        placeholder={placeholder}
-        name={name}
-        id={id}
-        type={type}
-        onChange={onChange}
-      />
+      {(textarea
+        && (
+          <Input
+            tag="textarea"
+            name={name}
+            id={id}
+            onChange={onChange}
+            rows={10}
+            style={{ resize: 'none' }}
+          />
+        )) || (
+          <Input
+            placeholder={placeholder}
+            name={name}
+            id={id}
+            type={type}
+            onChange={onChange}
+          />
+      )}
     </InputWrapper>
   );
 }

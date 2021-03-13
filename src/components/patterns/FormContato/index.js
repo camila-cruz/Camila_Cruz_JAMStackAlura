@@ -35,7 +35,7 @@ function FormContent() {
   const messageDTO = {
     name: messageInfo.name,
     email: messageInfo.email,
-    message: messageInfo.email,
+    message: messageInfo.message,
   };
 
   function handleChange(e) {
@@ -66,7 +66,7 @@ function FormContent() {
 
   return (
     <form onSubmit={onSubmit}>
-      <Text as="h2" variant="h2" size="3" marginBottom="40px">Envie sua mensagem</Text>
+      <Text as="h2" variant="h2" size={3} marginBottom="40px">Envie sua mensagem</Text>
 
       <div>
         <Text as="label" variant="label" htmlFor="name">
@@ -85,7 +85,7 @@ function FormContent() {
       <div>
         <Text as="label" variant="label" htmlFor="message">
           Mensagem
-          <TextField type="text" name="message" id="message" value={messageInfo.message} onChange={handleChange} textarea />
+          <TextField name="message" id="message" value={messageInfo.message} onChange={handleChange} />
         </Text>
       </div>
 
