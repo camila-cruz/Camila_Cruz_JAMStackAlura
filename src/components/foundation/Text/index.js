@@ -11,10 +11,10 @@ export const TextStyleVariantsMap = {
 };
 
 const TextBase = styled.span`
-  ${({ theme, variant }) => {
+  ${({ theme, variant, size }) => {
     if (theme.typography[variant]) {
       return css`
-        font-size: ${theme.typography[variant].size[0]}px;
+        font-size: ${theme.typography[variant].size[size]}px;
         font-weight: ${theme.typography[variant].fontWeight};
         line-height: ${theme.typography[variant].lineHeight};
         color: ${theme.typography[variant].color};
@@ -31,12 +31,14 @@ export default function Text({
   tag,
   variant,
   children,
+  size,
   ...props
 }) {
   return (
     <TextBase
       as={tag}
       variant={variant}
+      size={size}
       // eslint-disable-next-line react/jsx-props-no-spreading
       {...props}
     >
@@ -50,10 +52,12 @@ Text.propTypes = {
   tag: PropTypes.string,
   variant: PropTypes.string,
   children: PropTypes.node,
+  size: PropTypes.number,
 };
 
 Text.defaultProps = {
   tag: 'span',
   variant: 'paragraph',
   children: null,
+  size: 0,
 };

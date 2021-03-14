@@ -18,12 +18,15 @@ const InputWrapper = styled.div`
 const Input = styled(Text)`
   width: 100%;
   height: 48px;
-  border: 1px solid black;
+  border: 1px solid ${({ theme }) => theme.mainUi.background.light.tertiary};;
   border-radius: 10px;
   padding: 14px 6px;
+  margin-top: 4px;
+  margin-bottom: 16px;
   outline: 0;
+
   &:focus {
-    box-shadow: 0 0 3pt 2pt black;
+    box-shadow: 0 0 3pt 1pt ${({ theme }) => theme.mainUi.background.light.tertiary};;
   }
 `;
 
@@ -38,18 +41,32 @@ export default function TextField({
   id,
   type,
   textarea,
+  value,
   onChange,
 }) {
   return (
     <InputWrapper>
-      <Input
-        tag={textarea ? 'textarea' : undefined}
-        placeholder={placeholder}
-        name={name}
-        id={id}
-        type={type}
-        onChange={onChange}
-      />
+      {(textarea
+        && (
+          <Input
+            tag="textarea"
+            name={name}
+            id={id}
+            value={value}
+            onChange={onChange}
+            rows={10}
+            style={{ resize: 'none' }}
+          />
+        )) || (
+          <Input
+            placeholder={placeholder}
+            name={name}
+            id={id}
+            value={value}
+            type={type}
+            onChange={onChange}
+          />
+      )}
     </InputWrapper>
   );
 }
@@ -57,6 +74,7 @@ export default function TextField({
 TextField.defaultProps = {
   placeholder: null,
   type: 'text',
+  value: '',
   textarea: false,
   onChange: null,
 };
@@ -65,6 +83,7 @@ TextField.propTypes = {
   placeholder: PropTypes.string,
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
+  value: PropTypes.string,
   onChange: PropTypes.func,
   type: PropTypes.string,
   textarea: PropTypes.bool,
