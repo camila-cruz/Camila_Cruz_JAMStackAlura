@@ -114,7 +114,7 @@ function FormContent() {
     })
       .then((res) => res.json())
       .then((data) => {
-        // eslint-disable-next-line no-console
+        /* Manda um erro aleatoriamente */
         if (!Math.round(Math.random())) {
           throw new Error();
         }
@@ -122,9 +122,7 @@ function FormContent() {
         console.log(data);
         setSubmissionStatus(formStates.DONE);
       })
-      .catch((err) => {
-        // eslint-disable-next-line no-console
-        console.log(err);
+      .catch(() => {
         setSubmissionStatus(formStates.ERROR);
       });
   }
@@ -180,7 +178,7 @@ function FormContent() {
             </Text>
           </div>
 
-          <Button type="submit" variant="tertiary" fullWidth>
+          <Button type="submit" variant="tertiary" fullWidth disabled={!validateForm()}>
             Enviar
           </Button>
         </form>
