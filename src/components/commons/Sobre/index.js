@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Grid } from '../../foundation/layout/Grid';
 import Text from '../../foundation/Text';
+import FormContato from '../../patterns/FormContato';
+import { Button } from '../Button';
+import Modal from '../Modal';
 
 const SobreBase = styled.div`
   padding:  ${({ theme }) => theme.spacing[2]}px;
@@ -10,8 +13,13 @@ const SobreBase = styled.div`
 `;
 
 export default function Sobre() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <SobreBase>
+      <Modal isOpen={isOpen} onClose={() => setIsOpen(!isOpen)}>
+        {(props) => <FormContato props={props} />}
+      </Modal>
       <Grid.Container
         display="flex"
         flexDirection={{
@@ -80,6 +88,9 @@ export default function Sobre() {
               open-source para contribuir, freelas e oportunidades de aprender e ensinar.
               <Text variant="strong"> E aí, let&apos;s code together?</Text>
             </Text>
+            <Button variant="primary" marginTop="16px" onClick={() => setIsOpen(true)}>
+              Entre em contato
+            </Button>
           </Grid.Col>
         </Grid.Row>
       </Grid.Container>
