@@ -1,6 +1,7 @@
 import React from 'react';
 import styled, { createGlobalStyle, css } from 'styled-components';
 import PropTypes from 'prop-types';
+import { motion } from 'framer-motion';
 
 const ModalWrapper = styled.div`
   display: flex;
@@ -60,12 +61,30 @@ export default function Modal({ isOpen, onClose, children }) {
     <ModalWrapper
       isOpen={isOpen}
       /* Procurar outro método para modal não fechar com click que termina fora */
-      onClick={(e) => handleClose(e, onClose)}
+      onMouseDown={(e) => handleClose(e, onClose)}
     >
       {isOpen && <LockScroll />}
 
-      {children({ 'data-modal-safe-area': 'true' })}
-
+      <motion.div
+        variants={{
+          open: {
+            scale: 1,
+          },
+          closed: {
+            scale: 0,
+          },
+        }}
+        animate={isOpen ? 'open' : 'closed'}
+        transition={{
+          duration: 0.4,
+        }}
+        style={{
+          display: 'flex',
+          flex: 1,
+        }}
+      >
+        {children({ 'data-modal-safe-area': 'true' })}
+      </motion.div>
     </ModalWrapper>
   );
 }
