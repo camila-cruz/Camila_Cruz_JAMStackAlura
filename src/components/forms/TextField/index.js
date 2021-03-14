@@ -41,6 +41,7 @@ export default function TextField({
   id,
   type,
   textarea,
+  value,
   onChange,
 }) {
   return (
@@ -51,6 +52,7 @@ export default function TextField({
             tag="textarea"
             name={name}
             id={id}
+            value={value}
             onChange={onChange}
             rows={10}
             style={{ resize: 'none' }}
@@ -60,6 +62,7 @@ export default function TextField({
             placeholder={placeholder}
             name={name}
             id={id}
+            value={value}
             type={type}
             onChange={onChange}
           />
@@ -71,6 +74,7 @@ export default function TextField({
 TextField.defaultProps = {
   placeholder: null,
   type: 'text',
+  value: '',
   textarea: false,
   onChange: null,
 };
@@ -79,6 +83,7 @@ TextField.propTypes = {
   placeholder: PropTypes.string,
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
+  value: PropTypes.string,
   onChange: PropTypes.func,
   type: PropTypes.string,
   textarea: PropTypes.bool,
