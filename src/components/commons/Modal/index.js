@@ -61,7 +61,7 @@ export default function Modal({ isOpen, onClose, children }) {
     <ModalWrapper
       isOpen={isOpen}
       /* Procurar outro método para modal não fechar com click que termina fora */
-      onClick={(e) => handleClose(e, onClose)}
+      onMouseDown={(e) => handleClose(e, onClose)}
     >
       {isOpen && <LockScroll />}
 
