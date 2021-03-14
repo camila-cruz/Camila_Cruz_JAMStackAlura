@@ -68,6 +68,12 @@ function FormContent() {
     message: messageInfo.message,
   };
 
+  function validateForm() {
+    /* Para implementar visualização dos campos vazios */
+    const emptyFields = Object.values(messageInfo).filter((field) => field.length === 0);
+    return emptyFields.length === 0;
+  }
+
   function handleChange(e) {
     const fieldName = e.target.getAttribute('name');
 
@@ -92,6 +98,10 @@ function FormContent() {
 
   function onSubmit(e) {
     e.preventDefault();
+
+    /* Não tenta enviar se houver algum campo inválido ou vazio */
+    if (!validateForm()) return;
+
     setIsFormSubmitted(true);
     setSubmissionStatus(formStates.LOADING);
 
