@@ -1,20 +1,20 @@
 import React from 'react';
-import Cabecalho from '../src/components/commons/Cabecalho';
-import Capa from '../src/components/commons/Capa';
+import HomeScreen from '../src/components/screens/HomeScreen';
+import websitePageHOC from '../src/components/wrappers/WebsitePage/hoc';
 
-import Footer from '../src/components/commons/Footer';
-import Sobre from '../src/components/commons/Sobre';
-import { Box } from '../src/components/foundation/layout/Box';
-import WrapperProjetos from '../src/components/foundation/WrapperProjetos';
-
-export default function Home() {
+function HomePage() {
   return (
-    <Box>
-      <Capa title="Camila Cruz" />
-      <Cabecalho />
-      <Sobre />
-      <WrapperProjetos />
-      <Footer />
-    </Box>
+    <HomeScreen />
   );
 }
+
+export default websitePageHOC(HomePage, {
+  pageWrapperProps: {
+    seoProps: {
+      headTitle: 'Home',
+    },
+    menuProps: {
+      display: false,
+    },
+  },
+});

@@ -1,8 +1,5 @@
 import React from 'react';
-import { ThemeProvider } from 'styled-components';
 import Head from 'next/head';
-import theme from '../src/theme';
-import { GlobalStyle } from '../src/theme/GlobalStyle';
 
 // eslint-disable-next-line react/prop-types
 export default function App({ Component, pageProps }) {
@@ -16,11 +13,8 @@ export default function App({ Component, pageProps }) {
           rel="stylesheet"
         />
       </Head>
-      <ThemeProvider theme={theme}>
-        <GlobalStyle />
-        {/* eslint-disable-next-line react/jsx-props-no-spreading */}
-        <Component {...pageProps} />
-      </ThemeProvider>
+      {/* eslint-disable-next-line react/jsx-props-no-spreading */}
+      <Component {...pageProps} />
     </>
   );
 }
