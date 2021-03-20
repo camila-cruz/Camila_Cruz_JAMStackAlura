@@ -25,4 +25,10 @@ export const Button = styled.button`
   `};
   
   ${propToStyle('marginTop')}
+
+  transition: 0.3s ease;
+
+  &:hover {
+    background-color: #fff4b2;
+  }
 `;
