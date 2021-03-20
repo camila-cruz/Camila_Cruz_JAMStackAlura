@@ -1,6 +1,9 @@
+import React from 'react';
 import styled from 'styled-components';
+import NextLink from 'next/link';
+import PropTypes from 'prop-types';
 
-const Link = styled.a`
+const StyledLink = styled.a`
   /* Efeito de hover */
   &:after {    
     position: relative;
@@ -22,4 +25,18 @@ const Link = styled.a`
   }
 `;
 
-export default Link;
+export default function Link({ href, children, ...props }) {
+  return (
+    <NextLink href={href} passHref>
+      {/* eslint-disable-next-line react/jsx-props-no-spreading */}
+      <StyledLink {...props}>
+        {children}
+      </StyledLink>
+    </NextLink>
+  );
+}
+
+Link.propTypes = {
+  href: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
+};
