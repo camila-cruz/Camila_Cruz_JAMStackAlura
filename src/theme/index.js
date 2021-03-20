@@ -51,6 +51,7 @@ const weight = {
   semiLight: 400,
   regular: 600,
   bold: 700,
+  extraBold: 900,
 };
 
 const typography = {
@@ -95,6 +96,12 @@ const typography = {
     fontWeight: weight.regular,
     lineHeight: 0,
     size: [18],
+  },
+  buttonText: {
+    fontFamily: '',
+    fontWeight: weight.extraBold,
+    lineHeight: 'normal',
+    size: [16, 14],
   },
 };
 
