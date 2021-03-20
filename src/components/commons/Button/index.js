@@ -30,5 +30,6 @@ export const Button = styled.button`
 
   &:hover {
     background-color: #fff4b2;
+    color: ${({ theme }) => theme.mainUi.text.light.primary};
   }
 `;

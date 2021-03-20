@@ -17,7 +17,6 @@ const TextBase = styled.span`
         font-size: ${theme.typography[variant].size[size]}px;
         font-weight: ${theme.typography[variant].fontWeight};
         line-height: ${theme.typography[variant].lineHeight};
-        color: ${theme.typography[variant].color};
       `;
     }
     return TextStyleVariantsMap[variant];
@@ -26,6 +25,7 @@ const TextBase = styled.span`
   ${propToStyle('textAlign')}
   ${propToStyle('marginTop')}
   ${propToStyle('marginBottom')}
+  ${propToStyle('fontWeight')}
 `;
 
 export default function Text({
