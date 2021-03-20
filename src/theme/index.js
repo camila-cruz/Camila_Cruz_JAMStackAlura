@@ -51,25 +51,26 @@ const weight = {
   semiLight: 400,
   regular: 600,
   bold: 700,
+  extraBold: 900,
 };
 
 const typography = {
   h1: {
     fontFamily: '',
     fontWeight: '',
-    lineHeight: 0,
+    lineHeight: 'normal',
     size: [90, 64, 48, 32, 28, 24],
   },
   h2: {
     fontFamily: '',
     fontWeight: '',
-    lineHeight: 0,
+    lineHeight: 'normal',
     size: [48, 32, 28, 24],
   },
   h3: {
     fontFamily: '',
     fontWeight: '',
-    lineHeight: 0,
+    lineHeight: 'normal',
     size: [20, 18],
   },
   paragraph: {
@@ -81,20 +82,26 @@ const typography = {
   link: {
     fontFamily: '',
     fontWeight: weight.bold,
-    lineHeight: 0,
+    lineHeight: 'normal',
     size: [16, 14],
   },
   inputText: {
     fontFamily: '',
     fontWeight: weight.regular,
-    lineHeight: 0,
+    lineHeight: 'normal',
     size: [16, 14],
   },
   label: {
     fontFamily: '',
     fontWeight: weight.regular,
-    lineHeight: 0,
+    lineHeight: 'normal',
     size: [18],
+  },
+  buttonText: {
+    fontFamily: '',
+    fontWeight: weight.extraBold,
+    lineHeight: 'normal',
+    size: [16, 14],
   },
 };
 

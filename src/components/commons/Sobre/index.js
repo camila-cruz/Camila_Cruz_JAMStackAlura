@@ -57,19 +57,17 @@ export default function Sobre() {
             display="flex"
             flexDirection="column"
             justifyContent="center"
-            alignItems={{
-              xs: 'center',
-              md: 'flex-start',
-            }}
+            alignItems="center"
           >
-            <h2
-              style={{
-                marginTop: '16px',
-                marginBottom: '16px',
-              }}
+            <Text
+              tag="h2"
+              variant="h2"
+              size={3}
+              marginTop={{ xs: '32px', md: '16px' }}
+              marginBottom="32px"
             >
               Olá, eu sou a Camila!
-            </h2>
+            </Text>
             <Text
               tag="p"
               variant="paragraph"
@@ -88,7 +86,7 @@ export default function Sobre() {
               open-source para contribuir, freelas e oportunidades de aprender e ensinar.
               <Text variant="strong"> E aí, let&apos;s code together?</Text>
             </Text>
-            <Button variant="primary" marginTop="16px" onClick={() => setIsOpen(true)}>
+            <Button variant="primary" marginTop="32px" onClick={() => setIsOpen(true)}>
               Entre em contato
             </Button>
           </Grid.Col>

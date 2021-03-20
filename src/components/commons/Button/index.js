@@ -4,8 +4,8 @@ import { propToStyle } from '../../../theme/utils/propToStyle';
 export const Button = styled.button`
   width: 200px;
   height: 48px;
-  font-size: 16px;
-  font-weight: 600;
+  font-size: ${({ theme }) => theme.typography.buttonText.size[0]}px;
+  font-weight: ${({ theme }) => theme.typography.buttonText.fontWeight};
   text-transform: uppercase;
   cursor: pointer;
 
@@ -25,4 +25,10 @@ export const Button = styled.button`
   `};
   
   ${propToStyle('marginTop')}
+
+  transition: 0.3s ease;
+
+  &:hover {
+    background-color: #fff4b2;
+  }
 `;
