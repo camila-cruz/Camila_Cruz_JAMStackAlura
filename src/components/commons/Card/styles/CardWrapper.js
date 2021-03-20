@@ -16,8 +16,8 @@ CardWrapper.CardDefault = css`
   flex-direction: column;
   justify-content: space-between;
 
-  max-width: 250px;
-  height: 300px;
+  max-width: 300px;
+  height: 250px;
 
   /* border: 2px solid ${({ theme }) => theme.mainUi.background.light.tertiary}; */
   border-radius: ${({ theme }) => theme.border[0]}px;
@@ -114,7 +114,7 @@ CardWrapper.CardDestaque = styled.div`
     `,
     md: css`
       width: 100%;
-      max-width: 1040px;
+      max-width: 1100px;
       display: flex;
       flex-direction: row;
       margin-top: ${({ theme }) => theme.spacing[2]}px;
@@ -163,7 +163,7 @@ CardWrapper.CardDestaque = styled.div`
       & > ${CardWrapper.CardImage} {
         width: auto;
         height: 100%;
-        max-width: 700px;
+        max-width: 760px;
 
         & > img {
           object-fit: cover;
