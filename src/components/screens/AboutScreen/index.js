@@ -113,7 +113,7 @@ export default function AboutScreen({ repos }) {
 }
 
 AboutScreen.defaultProps = {
-  repos: [],
+  repos: {},
 };
 
 AboutScreen.propTypes = {
