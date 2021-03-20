@@ -17,6 +17,7 @@ export default function SEO({ headTitle }) {
       <title>{title}</title>
       <meta name="title" content={title} />
       <meta name="description" content={description} />
+      <meta name="theme-color" content="#ffd879" />
 
       {/* <!-- Open Graph / Facebook --> */}
       <meta property="og:type" content="website" />
