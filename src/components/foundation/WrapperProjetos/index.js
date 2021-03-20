@@ -8,28 +8,28 @@ import { Grid } from '../layout/Grid';
 const cards = [
   {
     title: 'The Blacklist: The List',
-    image: '/images/projetos/the-blacklist.png',
+    image: '/images/projetos/the-blacklist.webp',
     text: 'A lista da série The Blacklist.',
     link: 'https://github.com/camila-cruz/the-blacklist',
     destaque: false,
   },
   {
     title: 'Sistema SOS Nova Vida',
-    image: '/images/projetos/sos-nova-vida.png',
+    image: '/images/projetos/sos-nova-vida.webp',
     text: 'Sistema integrado com website para a SOS Nova Vida.',
     link: 'https://github.com/camila-cruz/sos-nova-vida',
     destaque: false,
   },
   {
     title: 'Anagram Board',
-    image: '/images/projetos/anagram-board.png',
+    image: '/images/projetos/anagram-board.webp',
     text: 'roque as letras de lugar e forme anagramas!',
     link: 'https://github.com/camila-cruz/anagram-board',
     destaque: false,
   },
   {
     title: 'Inteligência Artificial',
-    image: '/images/projetos/inteligencia-artificial.png',
+    image: '/images/projetos/inteligencia-artificial.webp',
     text: 'Projetos e recursos para consulta e aprendizagem sobre IA.',
     link: 'https://github.com/camila-cruz/inteligencia-artificial',
     destaque: true,
