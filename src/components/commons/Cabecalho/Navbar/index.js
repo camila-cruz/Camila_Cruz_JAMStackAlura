@@ -25,10 +25,20 @@ const Navlink = styled(Link)`
   text-transform: uppercase;
   font-weight: ${({ theme }) => theme.weight.bold};
 
-  /* Força o link a ter tamanho menor do que o padrão */
-  & > span {
-    font-size: ${({ theme }) => theme.typography.paragraph.size[1]}px;
-  }
+  ${breakpointsMedia({
+    xs: css`
+      /* Força o link a ter tamanho menor do que o padrão */
+      & > span {
+        font-size: ${({ theme }) => theme.typography.link.size[1]}px;
+      }
+    `,
+    md: css`
+      & > span {
+        font-size: ${({ theme }) => theme.typography.link.size[0]}px;
+      }
+    `,
+  })}
+  
 `;
 
 const NavbarBase = styled.div`
