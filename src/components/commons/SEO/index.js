@@ -6,7 +6,7 @@ export default function SEO({ headTitle }) {
   const hasHeadTitle = Boolean(headTitle);
   const baseTitle = 'Camila Cruz - Portfólio';
   const title = hasHeadTitle ? `${headTitle} | ${baseTitle}` : baseTitle;
-  const description = '';
+  const description = 'Portfólio e blog da desenvolvedora brasileira Camila Cruz';
   const imageSrc = 'images/logo.png';
   const urlBase = 'https://portfolio-alura-camila-cruz.vercel.app';
   const image = `${urlBase}/${imageSrc}`;
