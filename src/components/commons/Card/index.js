@@ -10,7 +10,13 @@ export default function Card({ title, image, text, link, destaque }) {
     <>
       {(destaque === true && (
         <CardWrapper.CardDestaque>
-          <CardWrapper.CardImage as="a" href={link} target="_blank" style={{ textDecoration: 'none' }}>
+          <CardWrapper.CardImage
+            as="a"
+            href={link}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ textDecoration: 'none' }}
+          >
             <img src={image} alt={`Imagem do projeto ${title}`} />
           </CardWrapper.CardImage>
           <div>
