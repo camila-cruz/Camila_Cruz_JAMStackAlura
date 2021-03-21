@@ -1,25 +1,34 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
+import React, { useContext } from 'react';
+import styled, { css } from 'styled-components';
+import PropTypes from 'prop-types';
 import { Grid } from '../../foundation/layout/Grid';
 import Text from '../../foundation/Text';
-import FormContato from '../../patterns/FormContato';
 import { Button } from '../Button';
-import Modal from '../Modal';
+import { WebsitePageContext } from '../../wrappers/WebsitePage';
 
 const SobreBase = styled.div`
   padding:  ${({ theme }) => theme.spacing[2]}px;
-  background-color: ${({ theme }) => theme.mainUi.background.light.tertiary};
-  color: ${({ theme }) => theme.mainUi.text.dark.primary};
+
+  ${({ invertColor }) => {
+    if (invertColor) {
+      return css`
+        background-color: ${({ theme }) => theme.mainUi.background.light.primary};
+        color: ${({ theme }) => theme.mainUi.text.light.primary};
+      `;
+    }
+
+    return css`
+      background-color: ${({ theme }) => theme.mainUi.background.light.tertiary};
+      color: ${({ theme }) => theme.mainUi.text.dark.primary};
+    `;
+  }}
 `;
 
-export default function Sobre() {
-  const [isOpen, setIsOpen] = useState(false);
+export default function Sobre({ invertColor }) {
+  const websitePageContext = useContext(WebsitePageContext);
 
   return (
-    <SobreBase>
-      <Modal isOpen={isOpen} onClose={() => setIsOpen(!isOpen)}>
-        {(props) => <FormContato props={props} />}
-      </Modal>
+    <SobreBase invertColor={invertColor}>
       <Grid.Container
         display="flex"
         flexDirection={{
@@ -86,7 +95,11 @@ export default function Sobre() {
               open-source para contribuir, freelas e oportunidades de aprender e ensinar.
               <Text variant="strong"> E aí, let&apos;s code together?</Text>
             </Text>
-            <Button variant="primary" marginTop="32px" onClick={() => setIsOpen(true)}>
+            <Button
+              variant={invertColor ? 'tertiary' : 'primary'}
+              marginTop="32px"
+              onClick={() => websitePageContext.toggleModal()}
+            >
               Entre em contato
             </Button>
           </Grid.Col>
@@ -95,3 +108,11 @@ export default function Sobre() {
     </SobreBase>
   );
 }
+
+Sobre.defaultProps = {
+  invertColor: false,
+};
+
+Sobre.propTypes = {
+  invertColor: PropTypes.bool,
+};
