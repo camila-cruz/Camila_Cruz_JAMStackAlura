@@ -1,5 +1,5 @@
 import React from 'react';
-import Document from 'next/document';
+import Document, { Html } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
 
 export default class MyDocument extends Document {
@@ -17,10 +17,10 @@ export default class MyDocument extends Document {
       return {
         ...initialProps,
         styles: (
-          <>
+          <Html lang="pt-br">
             {initialProps.styles}
             {sheet.getStyleElement()}
-          </>
+          </Html>
         ),
       };
     } finally {

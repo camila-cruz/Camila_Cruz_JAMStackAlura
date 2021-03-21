@@ -17,7 +17,7 @@ export default function Card({ title, image, text, link, destaque }) {
             <CardWrapper.CardTitle>{title}</CardWrapper.CardTitle>
             <CardWrapper.CardText>
               {text}
-              <Link href={link} target="_blank">
+              <Link href={link} target="_blank" rel="noopener noreferrer">
                 <Text variant="link">
                   Veja o repositório
                   <img src="/images/arrow.svg" alt="Link para o repositório" />
