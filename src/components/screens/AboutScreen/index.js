@@ -1,6 +1,6 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import Image from 'next/image';
-import PropTypes from 'prop-types';
 import { Grid } from '../../foundation/layout/Grid';
 import Text from '../../foundation/Text';
 import RepoCard from '../../commons/Card/RepoCard';
@@ -97,11 +97,9 @@ export default function AboutScreen({ repos }) {
                 justifyContent="center"
               >
                 <RepoCard
-                  url={repo.url}
+                  url={`/projetos/${repo.name}`}
                   name={repo.name}
                   description={repo.description}
-                  // eslint-disable-next-line react/jsx-props-no-spreading
-                  {...repo}
                 />
               </Grid.Col>
             ))}
@@ -111,18 +109,3 @@ export default function AboutScreen({ repos }) {
     </Grid.Container>
   );
 }
-
-AboutScreen.defaultProps = {
-  repos: [{
-    id: 0,
-    url: '',
-    name: '',
-    description: '',
-  }],
-};
-
-AboutScreen.propTypes = {
-  repos: PropTypes.shape({
-    sort: PropTypes.func,
-  }),
-};
