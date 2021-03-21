@@ -26,6 +26,7 @@ const TextBase = styled.span`
   ${propToStyle('marginTop')}
   ${propToStyle('marginBottom')}
   ${propToStyle('fontWeight')}
+  ${propToStyle('display')}
 `;
 
 export default function Text({
