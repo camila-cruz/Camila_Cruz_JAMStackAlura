@@ -13,6 +13,7 @@ export const GlobalStyle = createGlobalStyle`
     display: flex;
     min-height: 100vh;
     width: 100%;
+    color: ${({ theme }) => theme.mainUi.text.light.primary};
   }
 
   #__next {
