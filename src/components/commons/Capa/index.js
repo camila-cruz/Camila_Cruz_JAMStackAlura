@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Text from '../../foundation/Text';
 
 const CapaBase = styled.div`
   width: 100%;
@@ -12,22 +13,14 @@ const CapaBase = styled.div`
   /* background-color: ${({ theme }) => theme.mainUi.background.light.secondary}; */
   color: ${({ theme }) => theme.mainUi.text.light.primary};
   background: ${({ theme }) => theme.mainUi.background.light.secondary} url('/images/yellow-honeycomb.svg');
-
-  & > h1 {
-    font-size: ${({ theme }) => theme.typography.h1.size[2]}px;
-  }
-
-  & > h3 {
-    font-size: ${({ theme }) => theme.typography.h3.size[0]}px;
-  }
 `;
 
 // eslint-disable-next-line react/prop-types
 export default function Capa({ title }) {
   return (
     <CapaBase>
-      <h1>{title}</h1>
-      <h3>Portfolio</h3>
+      <Text as="h1" variant="h1" size={2}>{title}</Text>
+      <Text as="h2" variant="h3" size={0}>Developer</Text>
     </CapaBase>
   );
 }
