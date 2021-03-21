@@ -65,7 +65,7 @@ export default function ProjectScreen({
           justifyContent="center"
         >
           <Text variant="link" marginBottom="32px">
-            <Link href={url}>Visite o repositório</Link>
+            <Link href={url} rel="noopener noreferrer">Visite o repositório</Link>
           </Text>
         </Grid.Col>
       </Grid.Row>
