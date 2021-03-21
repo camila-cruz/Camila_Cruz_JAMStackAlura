@@ -4,6 +4,9 @@ import NextLink from 'next/link';
 import PropTypes from 'prop-types';
 
 const StyledLink = styled.a`
+  text-decoration: none;
+  color: ${({ theme }) => theme.mainUi.text.light.primary};
+
   /* Efeito de hover */
   &:after {    
     position: relative;
