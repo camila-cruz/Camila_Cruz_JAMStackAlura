@@ -57,10 +57,12 @@ export async function getStaticPaths() {
       return resposta;
     });
 
-  const paths = repos.map((repo) => {
-    const repoName = repo.name;
-    return { params: { projeto: repoName } };
-  });
+  const paths = repos
+    .filter((repo) => !repo.fork && repo.description && !repo.description.includes('My'))
+    .map((repo) => {
+      const repoName = repo.name;
+      return { params: { projeto: repoName } };
+    });
 
   return {
     paths,

@@ -90,7 +90,7 @@ export default function AboutScreen({ repos }) {
           </Text>
 
           <Grid.Row marginBottom={{ md: '32px' }}>
-            {sortedRepos.map((repo) => !repo.fork && repo.description && !repo.description.includes('My') && (
+            {sortedRepos.map((repo) => (
               <Grid.Col
                 key={repo.id}
                 display="flex"
