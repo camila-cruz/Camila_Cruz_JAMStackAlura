@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
-import Image from 'next/image';
 import { Grid } from '../../foundation/layout/Grid';
 import Text from '../../foundation/Text';
 import RepoCard from '../../commons/Card/RepoCard';
+import { Image } from '../../commons/Image';
 // import Sobre from '../../commons/Sobre';
 
 export default function AboutScreen({ repos }) {
@@ -35,9 +35,14 @@ export default function AboutScreen({ repos }) {
           offset={{ md: 1 }}
           value={{ xs: 12, md: 4 }}
           display="flex"
-          // justifyContent="center"
+          justifyContent="center"
+          alignItems="center"
         >
-          <Image src="/images/avatar.png" width="352" height="373.33" />
+          <Image
+            src="/images/avatar.png"
+            height={{ xs: '300px', md: '360px' }}
+            alt="Avatar pessoal"
+          />
         </Grid.Col>
         <Grid.Col
           offset={{ md: 1 }}
@@ -84,7 +89,7 @@ export default function AboutScreen({ repos }) {
             variant="h3"
             size={0}
             marginTop={{ md: '48px' }}
-            marginBottom={{ md: '32px' }}
+            marginBottom={{ xs: '16px', md: '32px' }}
           >
             Meus repositórios
           </Text>
