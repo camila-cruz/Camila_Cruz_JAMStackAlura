@@ -1,5 +1,4 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
 import {
   Eye,
   RepoForked,
@@ -11,26 +10,7 @@ import Link from '../../commons/Link';
 import { Grid } from '../../foundation/layout/Grid';
 import Text from '../../foundation/Text';
 import imagesArr from '../../../../db.json';
-import { breakpointsMedia } from '../../../theme/utils/breakpointsMedia';
-
-const Image = styled.img`
-  width: auto;
-
-  ${breakpointsMedia({
-    xs: css`
-      height: 200px;
-    `,
-    md: css`
-      height: 300px;
-    `,
-  })}
-
-  ${({ bordered }) => bordered && css`
-    border: 1px solid ${({ theme }) => theme.mainUi.background.light.tertiary};
-    border-radius: 8px;
-  `}
-
-`;
+import { Image } from '../../commons/Image';
 
 export default function ProjectScreen({
   name,
@@ -81,7 +61,12 @@ export default function ProjectScreen({
           justifyContent="center"
         >
           <Grid.Row
-            width={{ xs: '80%', md: '60%', lg: '40%' }}
+            width={{
+              xs: '100%',
+              sm: '80%',
+              md: '60%',
+              lg: '40%',
+            }}
           >
             <Grid.Col
               display="flex"
@@ -139,7 +124,12 @@ export default function ProjectScreen({
           flexDirection="column"
           alignItems="center"
         >
-          <Image src={image.path} alt={image.description} bordered />
+          <Image
+            src={image.path}
+            alt={image.description}
+            height={{ xs: '180px', sm: '220px', md: '300px' }}
+            bordered
+          />
         </Grid.Col>
       </Grid.Row>
     </Grid.Container>
