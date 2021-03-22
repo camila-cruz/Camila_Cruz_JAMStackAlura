@@ -1,0 +1,64 @@
+{
+  "images": [
+    {
+      "path": "/images/projetos/anagram-board.webp",
+      "title": "anagram-board",
+      "description": "Página inicial do projeto"
+    },
+    {
+      "path": "/images/projetos/inteligencia-artificial.webp",
+      "title": "inteligencia-artificial",
+      "description": "Página inicial do projeto"
+    },
+    {
+      "path": "/images/projetos/sos-nova-vida.webp",
+      "title": "sos-nova-vida",
+      "description": "Página inicial do projeto"
+    },
+    {
+      "path": "/images/projetos/the-blacklist.webp",
+      "title": "the-blacklist",
+      "description": "Página inicial do projeto"
+    },
+    {
+      "path": "/images/projetos/instalura.webp",
+      "title": "instalura",
+      "description": "Página inicial do projeto"
+    },
+    {
+      "path": "/images/projetos/alura-viagens.webp",
+      "title": "alura-viagens",
+      "description": "Página inicial do projeto"
+    },
+    {
+      "path": "/images/projetos/Camila_Cruz_JAMStackAlura.webp",
+      "title": "Camila_Cruz_JAMStackAlura",
+      "description": "Página inicial do projeto"
+    },
+    {
+      "path": "/images/projetos/idiomaflix.webp",
+      "title": "idiomaflix",
+      "description": "Página inicial do projeto"
+    },
+    {
+      "path": "/images/projetos/legendary.webp",
+      "title": "legendary",
+      "description": "Logo do projeto"
+    },
+    {
+      "path": "/images/projetos/podcastv.webp",
+      "title": "podcastv",
+      "description": "Página inicial do projeto"
+    },
+    {
+      "path": "/images/projetos/tv-radio-app.webp",
+      "title": "tv-radio-app",
+      "description": "Página inicial do projeto"
+    },
+    {
+      "path": "/images/projetos/sistema-SosNovaVida.webp",
+      "title": "sistema-SosNovaVida",
+      "description": "Página inicial do projeto"
+    }
+  ]
+}

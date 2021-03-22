@@ -10,11 +10,13 @@ function AboutPage(props) {
 export default websitePageHOC(AboutPage, {});
 
 export async function getStaticProps() {
-  const repos = await fetch('https://api.github.com/users/camila-cruz/repos')
+  const allRepos = await fetch('https://api.github.com/users/camila-cruz/repos')
     .then(async (res) => {
       const resposta = await res.json();
       return resposta;
     });
+
+  const repos = allRepos.filter((repo) => !repo.fork && repo.description && !repo.description.includes('My'));
 
   return {
     props: {
