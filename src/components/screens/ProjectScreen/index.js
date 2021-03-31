@@ -12,6 +12,22 @@ import Text from '../../foundation/Text';
 import imagesArr from '../../../../db.json';
 import { Image } from '../../commons/Image';
 
+function RepoInfo({ children }) {
+  return (
+    <Grid.Col
+      display="flex"
+      alignItems="center"
+      justifyContent="center"
+    >
+      {children}
+    </Grid.Col>
+  );
+}
+
+RepoInfo.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
 export default function ProjectScreen({
   name,
   description,
@@ -61,45 +77,31 @@ export default function ProjectScreen({
           justifyContent="center"
         >
           <Grid.Row
-            width={{
-              xs: '100%',
-              sm: '80%',
-              md: '60%',
-              lg: '40%',
-            }}
+            // width={{
+            //   xs: '100%',
+            //   sm: '80%',
+            //   md: '60%',
+            //   lg: '40%',
+            // }}
+            width="auto"
+            maxWidth="350px"
           >
-            <Grid.Col
-              display="flex"
-              alignItems="center"
-              justifyContent="center"
-            >
+            <RepoInfo>
               <RepoForked size={16} style={{ marginRight: '8px' }} alt="Forks" />
               {`${forks} `}
-            </Grid.Col>
-            <Grid.Col
-              display="flex"
-              alignItems="center"
-              justifyContent="center"
-            >
+            </RepoInfo>
+            <RepoInfo>
               <IssueOpened size={16} style={{ marginRight: '8px' }} alt="Issues abertas" />
               {`${openIssues} `}
-            </Grid.Col>
-            <Grid.Col
-              display="flex"
-              alignItems="center"
-              justifyContent="center"
-            >
+            </RepoInfo>
+            <RepoInfo>
               <Eye size={16} style={{ marginRight: '8px' }} alt="Watchers" />
               {`${watchers} `}
-            </Grid.Col>
-            <Grid.Col
-              display="flex"
-              alignItems="center"
-              justifyContent="center"
-            >
+            </RepoInfo>
+            <RepoInfo>
               <StarFill size={16} style={{ marginRight: '8px' }} alt="Stars" />
               {`${stars} `}
-            </Grid.Col>
+            </RepoInfo>
           </Grid.Row>
         </Grid.Col>
       </Grid.Row>
@@ -128,7 +130,7 @@ export default function ProjectScreen({
             src={image.path}
             alt={image.description}
             height={{ xs: '180px', sm: '220px', md: '300px' }}
-            bordered
+            shadowed
           />
         </Grid.Col>
       </Grid.Row>
