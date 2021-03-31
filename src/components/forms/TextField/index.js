@@ -9,7 +9,7 @@ const InputWrapper = styled.div`
     xs: css`
       margin-bottom: 16px;
     `,
-    md: css`
+    lg: css`
       margin-bottom: 32px;
     `,
   })}
@@ -18,6 +18,7 @@ const InputWrapper = styled.div`
 const Input = styled(Text)`
   width: 100%;
   height: 48px;
+  ${({ textarea }) => textarea && css`height: 80px`};
   border: 1px solid ${({ theme }) => theme.mainUi.background.light.tertiary};;
   border-radius: 10px;
   padding: 14px 6px;
