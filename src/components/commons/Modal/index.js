@@ -2,6 +2,7 @@ import React from 'react';
 import styled, { createGlobalStyle, css } from 'styled-components';
 import PropTypes from 'prop-types';
 import { motion } from 'framer-motion';
+import { Button } from '../Button';
 
 const ModalWrapper = styled.div`
   display: flex;
@@ -56,6 +57,19 @@ function handleClose(e, onClose) {
   }
 }
 
+const CloseButtonWrapper = styled(Button)`
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+`;
+
+function CloseButton() {
+  return <CloseButtonWrapper>X</CloseButtonWrapper>;
+}
+
 export default function Modal({ isOpen, onClose, children }) {
   return (
     <ModalWrapper
@@ -83,7 +97,7 @@ export default function Modal({ isOpen, onClose, children }) {
           flex: 1,
         }}
       >
-        {children({ 'data-modal-safe-area': 'true' })}
+        {children(CloseButton, { 'data-modal-safe-area': 'true' })}
       </motion.div>
     </ModalWrapper>
   );
