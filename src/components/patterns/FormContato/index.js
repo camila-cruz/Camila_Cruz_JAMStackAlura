@@ -13,6 +13,7 @@ import successAnimation from './animations/success.json';
 import errorAnimation from './animations/error.json';
 
 const FormWrapper = styled.div`
+  position: relative;
   display: flex;
   flex: 1;
   flex-direction: column;
@@ -188,7 +189,7 @@ function FormContent() {
 }
 
 // eslint-disable-next-line react/prop-types
-export default function FormContato({ props }) {
+export default function FormContato({ CloseButton, props }) {
   return (
     <Grid.Row
       marginLeft={0}
@@ -202,6 +203,7 @@ export default function FormContato({ props }) {
       >
         {/* eslint-disable-next-line react/jsx-props-no-spreading */}
         <FormWrapper {...props}>
+          <CloseButton />
           <FormContent />
         </FormWrapper>
       </Grid.Col>

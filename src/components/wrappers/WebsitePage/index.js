@@ -30,7 +30,7 @@ export default function WebsitePageWrapper({
       <SEO {...seoProps} />
       <Box>
         <Modal isOpen={isOpen} onClose={() => setIsOpen(!isOpen)}>
-          {(props) => <FormContato props={props} />}
+          {(CloseButton, props) => <FormContato props={props} CloseButton={CloseButton} />}
         </Modal>
 
         {menuProps.display && <Cabecalho />}
