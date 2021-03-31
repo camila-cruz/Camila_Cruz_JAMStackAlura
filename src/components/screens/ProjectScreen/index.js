@@ -114,7 +114,7 @@ export default function ProjectScreen({
           justifyContent="center"
         >
           <Text variant="link" marginTop="16px" marginBottom="16px">
-            <Link href={url} rel="noopener noreferrer">Visite o repositório</Link>
+            <Link href={url} rel="noopener noreferrer" target="_blank">Visite o repositório</Link>
           </Text>
         </Grid.Col>
       </Grid.Row>
