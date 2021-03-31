@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Lottie } from '@crello/react-lottie';
+import * as yup from 'yup';
 import { Grid } from '../../foundation/layout/Grid';
 import { Box } from '../../foundation/layout/Box';
 import { Button } from '../../commons/Button';
@@ -12,6 +13,7 @@ import loadingAnimation from './animations/loading.json';
 import successAnimation from './animations/success.json';
 import errorAnimation from './animations/error.json';
 import { contactService } from '../../../services/contact';
+import { useForm } from '../../../infra/hooks/forms/useForm';
 
 const FormWrapper = styled.div`
   position: relative;
@@ -54,66 +56,56 @@ const formStates = {
   },
 };
 
+const messageSchema = yup.object().shape({
+  name: yup
+    .string()
+    .required('Preencha o seu nome')
+    .min(2, 'O nome precisa ter pelo menos 2 caracteres'),
+  email: yup
+    .string('Coloque o seu melhor e-mail')
+    .required(),
+  message: yup
+    .string()
+    .required('Digite a sua mensagem')
+    .min(10, 'A mensagem precisa ter pelo menos 10 caracteres'),
+});
+
 function FormContent() {
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const [submissionStatus, setSubmissionStatus] = useState(formStates.DEFAULT);
 
-  const [messageInfo, setMessageInfo] = useState({
+  const initialValues = {
     name: '',
     email: '',
     message: '',
-  });
-
-  const messageDTO = {
-    name: messageInfo.name,
-    email: messageInfo.email,
-    message: messageInfo.message,
   };
 
-  function validateForm() {
-    /* Para implementar visualização dos campos vazios */
-    const emptyFields = Object.values(messageInfo).filter((field) => field.length === 0);
-    return emptyFields.length === 0;
-  }
+  const form = useForm({
+    initialValues,
+    onSubmit: (messageDTO) => {
+      setIsFormSubmitted(true);
+      setSubmissionStatus(formStates.LOADING);
 
-  function handleChange(e) {
-    const fieldName = e.target.getAttribute('name');
-
-    setMessageInfo({
-      ...messageInfo,
-      [fieldName]: e.target.value,
-    });
-  }
+      contactService.sendMessage(messageDTO)
+        .then(() => {
+          setSubmissionStatus(formStates.DONE);
+        })
+        .catch(() => {
+          setSubmissionStatus(formStates.ERROR);
+        });
+    },
+    validateSchema: async (values) => messageSchema.validate(values, {
+      abortEarly: false,
+    }),
+  });
 
   function resetForm() {
     if (submissionStatus !== formStates.ERROR) {
-      setMessageInfo({
-        name: '',
-        email: '',
-        message: '',
-      });
+      form.handleReset();
     }
 
     setSubmissionStatus(formStates.DEFAULT);
     setIsFormSubmitted(false);
-  }
-
-  function onSubmit(e) {
-    e.preventDefault();
-
-    /* Não tenta enviar se houver algum campo inválido ou vazio */
-    if (!validateForm()) return;
-
-    setIsFormSubmitted(true);
-    setSubmissionStatus(formStates.LOADING);
-
-    contactService.sendMessage(messageDTO)
-      .then(() => {
-        setSubmissionStatus(formStates.DONE);
-      })
-      .catch(() => {
-        setSubmissionStatus(formStates.ERROR);
-      });
   }
 
   return (
@@ -143,31 +135,49 @@ function FormContent() {
           )}
         </Box>
       )) || (submissionStatus === formStates.DEFAULT && (
-        <form onSubmit={onSubmit}>
+        <form onSubmit={form.handleSubmit}>
           <Text as="h2" variant="h2" size={3} marginBottom="40px">Envie sua mensagem</Text>
 
           <div>
             <Text as="label" variant="label" htmlFor="name">
               Nome
-              <TextField type="text" name="name" id="name" value={messageInfo.name} onChange={handleChange} />
+              <TextField
+                type="text"
+                name="name"
+                id="name"
+                value={form.values.name}
+                onChange={form.handleChange}
+              />
             </Text>
           </div>
 
           <div>
             <Text as="label" variant="label" htmlFor="email">
               E-mail
-              <TextField type="email" name="email" id="email" value={messageInfo.email} onChange={handleChange} />
+              <TextField
+                type="email"
+                name="email"
+                id="email"
+                value={form.values.email}
+                onChange={form.handleChange}
+              />
             </Text>
           </div>
 
           <div>
             <Text as="label" variant="label" htmlFor="message">
               Mensagem
-              <TextField textarea name="message" id="message" value={messageInfo.message} onChange={handleChange} />
+              <TextField
+                textarea
+                name="message"
+                id="message"
+                value={form.values.message}
+                onChange={form.handleChange}
+              />
             </Text>
           </div>
 
-          <Button type="submit" variant="tertiary" fullWidth disabled={!validateForm()}>
+          <Button type="submit" variant="tertiary" fullWidth disabled={form.isFormDisabled}>
             Enviar
           </Button>
         </form>
