@@ -175,7 +175,7 @@ function FormContent() {
           <div>
             <Text as="label" variant="label" htmlFor="message">
               Mensagem
-              <TextField name="message" id="message" value={messageInfo.message} onChange={handleChange} />
+              <TextField textarea name="message" id="message" value={messageInfo.message} onChange={handleChange} />
             </Text>
           </div>
 
