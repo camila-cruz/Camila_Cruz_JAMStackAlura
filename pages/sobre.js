@@ -7,7 +7,13 @@ function AboutPage(props) {
   return <AboutScreen {...props} />;
 }
 
-export default websitePageHOC(AboutPage, {});
+export default websitePageHOC(AboutPage, {
+  pageWrapperProps: {
+    seoProps: {
+      headTitle: 'Sobre',
+    },
+  },
+});
 
 export async function getStaticProps() {
   const allRepos = await fetch('https://api.github.com/users/camila-cruz/repos')
