@@ -8,4 +8,10 @@ function Page404() {
   );
 }
 
-export default websitePageHOC(Page404, {});
+export default websitePageHOC(Page404, {
+  pageWrapperProps: {
+    seoProps: {
+      headTitle: 'Página não encontrada',
+    },
+  },
+});

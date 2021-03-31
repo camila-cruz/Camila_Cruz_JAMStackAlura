@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 export default function SEO({ headTitle }) {
   const hasHeadTitle = Boolean(headTitle);
-  const baseTitle = 'Camila Cruz - Portfólio';
+  const baseTitle = 'Camila Cruz - Developer';
   const title = hasHeadTitle ? `${headTitle} | ${baseTitle}` : baseTitle;
   const description = 'Portfólio e blog da desenvolvedora brasileira Camila Cruz';
   const imageSrc = 'images/logo.png';

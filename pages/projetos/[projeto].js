@@ -26,9 +26,7 @@ function ProjectPage({
 
 ProjectPage.propTypes = ProjectScreen.propTypes;
 
-export default websitePageHOC(ProjectPage, {
-  pageWrapperProps: {},
-});
+export default websitePageHOC(ProjectPage);
 
 export async function getStaticProps({ params }) {
   const repo = await fetch(`https://api.github.com/repos/camila-cruz/${params.projeto}`)
@@ -46,6 +44,11 @@ export async function getStaticProps({ params }) {
       watchers: repo.watchers,
       stars: repo.stargazers_count,
       url: repo.html_url,
+      pageWrapperProps: {
+        seoProps: {
+          headTitle: repo.name,
+        },
+      },
     },
   };
 }
