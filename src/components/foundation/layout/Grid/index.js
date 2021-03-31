@@ -111,6 +111,7 @@ const Row = styled.div`
   width: 100%;
 
   ${propToStyle('width')}
+  ${propToStyle('maxWidth')}
   ${propToStyle('order')}
   ${propToStyle('flex')}
   ${propToStyle('justifyContent')}
