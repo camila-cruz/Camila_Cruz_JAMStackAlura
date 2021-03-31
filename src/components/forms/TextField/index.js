@@ -18,8 +18,8 @@ const InputWrapper = styled.div`
 const Input = styled(Text)`
   width: 100%;
   height: 48px;
-  ${({ textarea }) => textarea && css`height: 80px`};
-  border: 1px solid ${({ theme }) => theme.mainUi.background.light.tertiary};;
+  ${({ textarea }) => textarea && css`height: 80px;`};
+  border: 1px solid ${({ theme }) => theme.mainUi.background.light.tertiary};
   border-radius: 10px;
   padding: 14px 6px;
   margin-top: 4px;
@@ -27,7 +27,7 @@ const Input = styled(Text)`
   outline: 0;
 
   &:focus {
-    box-shadow: 0 0 3pt 1pt ${({ theme }) => theme.mainUi.background.light.tertiary};;
+    box-shadow: 0 0 3pt 1pt ${({ theme }) => theme.mainUi.background.light.tertiary};
   }
 `;
 
@@ -57,6 +57,7 @@ export default function TextField({
             onChange={onChange}
             rows={10}
             style={{ resize: 'none' }}
+            textarea
           />
         )) || (
           <Input

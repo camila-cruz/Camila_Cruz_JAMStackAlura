@@ -11,6 +11,7 @@ import Text from '../../foundation/Text';
 import loadingAnimation from './animations/loading.json';
 import successAnimation from './animations/success.json';
 import errorAnimation from './animations/error.json';
+import { contactService } from '../../../services/contact';
 
 const FormWrapper = styled.div`
   position: relative;
@@ -106,21 +107,8 @@ function FormContent() {
     setIsFormSubmitted(true);
     setSubmissionStatus(formStates.LOADING);
 
-    fetch('https://contact-form-api-jamstack.herokuapp.com/message', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(messageDTO),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        /* Manda um erro aleatoriamente */
-        if (!Math.round(Math.random())) {
-          throw new Error();
-        }
-        // eslint-disable-next-line no-console
-        console.log(data);
+    contactService.sendMessage(messageDTO)
+      .then(() => {
         setSubmissionStatus(formStates.DONE);
       })
       .catch(() => {
