@@ -7,6 +7,7 @@ const colors = {
     brown: '#512919',
     lightBrown: '#64463A',
     white: '#F9F9F9',
+    red: '#ff7675',
   },
   dark: {
     yellow: '#FFD879',
@@ -15,6 +16,7 @@ const colors = {
     brown: '#7F5045',
     green: '#98BA52',
     white: '#EFEFEF',
+    red: '#d63031',
   },
 };
 
@@ -103,15 +105,21 @@ const typography = {
     lineHeight: 'normal',
     size: [16, 14],
   },
+  errorFormText: {
+    fontFamily: '',
+    fontWeight: weight.regular,
+    lineHeight: 'normal',
+    size: [11],
+  },
 };
 
 export default {
   mainUi,
   actions: {
-    error: '',
-    warning: '',
-    success: '',
-    info: '',
+    error: colors.dark.red,
+    warning: colors.dark.purple,
+    success: colors.dark.green,
+    info: colors.dark.blue,
     disabled: '',
   },
   breakpoints: {

@@ -1,30 +1,27 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import styled, { css } from 'styled-components';
 import PropTypes from 'prop-types';
 import Text from '../../foundation/Text';
-import { breakpointsMedia } from '../../../theme/utils/breakpointsMedia';
 
 const InputWrapper = styled.div`
-  ${breakpointsMedia({
-    xs: css`
-      margin-bottom: 16px;
-    `,
-    lg: css`
-      margin-bottom: 32px;
-    `,
-  })}
+  margin-bottom: 32px;
+  position: relative;
 `;
 
 const Input = styled(Text)`
   width: 100%;
   height: 48px;
-  ${({ textarea }) => textarea && css`height: 80px;`};
   border: 1px solid ${({ theme }) => theme.mainUi.background.light.tertiary};
   border-radius: 10px;
   padding: 14px 6px;
   margin-top: 4px;
-  margin-bottom: 16px;
   outline: 0;
+  
+  ${({ textarea }) => textarea && css`height: 80px;`};
+  ${({ isFieldInvalid }) => isFieldInvalid && css`
+    border-color: ${({ theme }) => theme.actions.error};
+  `};
 
   &:focus {
     box-shadow: 0 0 3pt 1pt ${({ theme }) => theme.mainUi.background.light.tertiary};
@@ -43,8 +40,14 @@ export default function TextField({
   type,
   textarea,
   value,
+  error,
+  isTouched,
   onChange,
+  ...props
 }) {
+  const hasError = Boolean(error);
+  const isFieldInvalid = hasError && isTouched;
+
   return (
     <InputWrapper>
       {(textarea
@@ -55,9 +58,11 @@ export default function TextField({
             id={id}
             value={value}
             onChange={onChange}
+            isFieldInvalid={isFieldInvalid}
             rows={10}
             style={{ resize: 'none' }}
             textarea
+            {...props}
           />
         )) || (
           <Input
@@ -67,7 +72,19 @@ export default function TextField({
             value={value}
             type={type}
             onChange={onChange}
+            isFieldInvalid={isFieldInvalid}
+            {...props}
           />
+      )}
+      {isFieldInvalid && (
+        <Text
+          variant="errorFormText"
+          display="block"
+          marginTop="4px"
+          action="error"
+        >
+          {error}
+        </Text>
       )}
     </InputWrapper>
   );
@@ -79,6 +96,8 @@ TextField.defaultProps = {
   value: '',
   textarea: false,
   onChange: null,
+  error: '',
+  isTouched: false,
 };
 
 TextField.propTypes = {
@@ -89,4 +108,6 @@ TextField.propTypes = {
   onChange: PropTypes.func,
   type: PropTypes.string,
   textarea: PropTypes.bool,
+  error: PropTypes.string,
+  isTouched: PropTypes.bool,
 };

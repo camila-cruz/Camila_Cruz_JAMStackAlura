@@ -17,6 +17,10 @@ const TextBase = styled.span`
         font-size: ${theme.typography[variant].size[size]}px;
         font-weight: ${theme.typography[variant].fontWeight};
         line-height: ${theme.typography[variant].lineHeight};
+
+        ${({ action }) => action && css`
+          color: ${theme.actions[action]};
+        `}
       `;
     }
     return TextStyleVariantsMap[variant];
