@@ -3,30 +3,25 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import PropTypes from 'prop-types';
 import Text from '../../foundation/Text';
-import { breakpointsMedia } from '../../../theme/utils/breakpointsMedia';
 
 const InputWrapper = styled.div`
-  ${breakpointsMedia({
-    xs: css`
-      margin-bottom: 32px;
-    `,
-    lg: css`
-      margin-bottom: 48px;
-    `,
-  })}
+  margin-bottom: 32px;
   position: relative;
 `;
 
 const Input = styled(Text)`
   width: 100%;
   height: 48px;
-  ${({ textarea }) => textarea && css`height: 80px;`};
   border: 1px solid ${({ theme }) => theme.mainUi.background.light.tertiary};
   border-radius: 10px;
   padding: 14px 6px;
   margin-top: 4px;
-  /* margin-bottom: 16px; */
   outline: 0;
+  
+  ${({ textarea }) => textarea && css`height: 80px;`};
+  ${({ isFieldInvalid }) => isFieldInvalid && css`
+    border-color: ${({ theme }) => theme.actions.error};
+  `};
 
   &:focus {
     box-shadow: 0 0 3pt 1pt ${({ theme }) => theme.mainUi.background.light.tertiary};
@@ -82,7 +77,12 @@ export default function TextField({
           />
       )}
       {isFieldInvalid && (
-        <Text variant="errorFormText" display="block" marginTop="4px">
+        <Text
+          variant="errorFormText"
+          display="block"
+          marginTop="4px"
+          action="error"
+        >
           {error}
         </Text>
       )}
