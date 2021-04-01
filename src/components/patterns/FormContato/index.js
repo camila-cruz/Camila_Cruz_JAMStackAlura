@@ -71,8 +71,9 @@ const messageSchema = yup.object().shape({
     .required('Preencha o seu nome')
     .min(2, 'O nome precisa ter pelo menos 2 caracteres'),
   email: yup
-    .string('Coloque o seu melhor e-mail')
-    .required(),
+    .string()
+    .email('Digite um e-mail válido')
+    .required('Coloque o seu melhor e-mail'),
   message: yup
     .string()
     .required('Digite a sua mensagem')
