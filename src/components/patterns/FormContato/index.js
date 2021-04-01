@@ -8,12 +8,12 @@ import { Box } from '../../foundation/layout/Box';
 import { Button } from '../../commons/Button';
 import TextField from '../../forms/TextField';
 import Text from '../../foundation/Text';
+import { contactService } from '../../../services/contact';
+import { useForm } from '../../../infra/hooks/forms/useForm';
 
 import loadingAnimation from './animations/loading.json';
 import successAnimation from './animations/success.json';
 import errorAnimation from './animations/error.json';
-import { contactService } from '../../../services/contact';
-import { useForm } from '../../../infra/hooks/forms/useForm';
 
 const FormWrapper = styled.div`
   position: relative;
@@ -30,9 +30,18 @@ const FormWrapper = styled.div`
   background-color: ${({ theme }) => theme.mainUi.background.light.primary};
   color: ${({ theme }) => theme.mainUi.text.light.primary};
 
+  max-width: 600px;
   /* 
   height: 100%;
   clip-path: polygon(25% 10%, 75% 10%, 100% 50%, 75% 90%, 25% 90%, 0% 50%); */
+
+  & > form {
+    min-width: 350px;
+    width: auto;
+    max-width: 400px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 `;
 
 const formStates = {
@@ -146,7 +155,10 @@ function FormContent() {
                 name="name"
                 id="name"
                 value={form.values.name}
+                error={form.errors.name}
+                isTouched={form.isTouched.name}
                 onChange={form.handleChange}
+                onBlur={form.handleBlur}
               />
             </Text>
           </div>
@@ -159,7 +171,10 @@ function FormContent() {
                 name="email"
                 id="email"
                 value={form.values.email}
+                error={form.errors.email}
+                isTouched={form.isTouched.email}
                 onChange={form.handleChange}
+                onBlur={form.handleBlur}
               />
             </Text>
           </div>
@@ -172,10 +187,17 @@ function FormContent() {
                 name="message"
                 id="message"
                 value={form.values.message}
+                error={form.errors.message}
+                isTouched={form.isTouched.message}
                 onChange={form.handleChange}
+                onBlur={form.handleBlur}
               />
             </Text>
           </div>
+
+          {/* <pre>
+            {JSON.stringify(form.errors, null, 4)}
+          </pre> */}
 
           <Button type="submit" variant="tertiary" fullWidth disabled={form.isFormDisabled}>
             Enviar
@@ -196,7 +218,7 @@ export default function FormContato({ CloseButton, props }) {
       justifyContent="center"
     >
       <Grid.Col
-        value={{ xs: 12, md: 6, lg: 4 }}
+        value={{ xs: 12, md: 7, lg: 5 }}
         alignSelf="center"
       >
         {/* eslint-disable-next-line react/jsx-props-no-spreading */}

@@ -1,8 +1,21 @@
 import { useEffect, useState } from 'react';
 
+function formatErrors(errors = []) {
+  return errors.reduce((errorsAcc, error) => {
+    const fieldName = error.path;
+    const errorMessage = error.message;
+
+    return {
+      ...errorsAcc,
+      [fieldName]: errorMessage,
+    };
+  }, {});
+}
+
 export function useForm({ initialValues, onSubmit, validateSchema }) {
   const [values, setValues] = useState(initialValues);
   const [errors, setErrors] = useState({});
+  const [isTouched, setTouchedFields] = useState({});
   const [isFormDisabled, setIsFormDisabled] = useState(true);
 
   function handleChange(e) {
@@ -21,7 +34,8 @@ export function useForm({ initialValues, onSubmit, validateSchema }) {
       setErrors({});
       setIsFormDisabled(false);
     } catch (err) {
-      setErrors(err);
+      const formatedErrors = formatErrors(err.inner);
+      setErrors(formatedErrors);
       setIsFormDisabled(true);
     }
   }
@@ -35,6 +49,15 @@ export function useForm({ initialValues, onSubmit, validateSchema }) {
     onSubmit(values);
   }
 
+  function handleBlur(e) {
+    const fieldName = e.target.getAttribute('name');
+
+    setTouchedFields({
+      ...isTouched,
+      [fieldName]: true,
+    });
+  }
+
   useEffect(() => {
     validate(values);
   }, [values]);
@@ -44,7 +67,9 @@ export function useForm({ initialValues, onSubmit, validateSchema }) {
     handleChange,
     handleSubmit,
     handleReset,
+    handleBlur,
     errors,
+    isTouched,
     isFormDisabled,
     setIsFormDisabled,
   };

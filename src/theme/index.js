@@ -103,6 +103,12 @@ const typography = {
     lineHeight: 'normal',
     size: [16, 14],
   },
+  errorFormText: {
+    fontFamily: '',
+    fontWeight: weight.regular,
+    lineHeight: 'normal',
+    size: [11],
+  },
 };
 
 export default {

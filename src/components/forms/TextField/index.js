@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import styled, { css } from 'styled-components';
 import PropTypes from 'prop-types';
@@ -7,12 +8,13 @@ import { breakpointsMedia } from '../../../theme/utils/breakpointsMedia';
 const InputWrapper = styled.div`
   ${breakpointsMedia({
     xs: css`
-      margin-bottom: 16px;
-    `,
-    lg: css`
       margin-bottom: 32px;
     `,
+    lg: css`
+      margin-bottom: 48px;
+    `,
   })}
+  position: relative;
 `;
 
 const Input = styled(Text)`
@@ -23,7 +25,7 @@ const Input = styled(Text)`
   border-radius: 10px;
   padding: 14px 6px;
   margin-top: 4px;
-  margin-bottom: 16px;
+  /* margin-bottom: 16px; */
   outline: 0;
 
   &:focus {
@@ -43,8 +45,14 @@ export default function TextField({
   type,
   textarea,
   value,
+  error,
+  isTouched,
   onChange,
+  ...props
 }) {
+  const hasError = Boolean(error);
+  const isFieldInvalid = hasError && isTouched;
+
   return (
     <InputWrapper>
       {(textarea
@@ -55,9 +63,11 @@ export default function TextField({
             id={id}
             value={value}
             onChange={onChange}
+            isFieldInvalid={isFieldInvalid}
             rows={10}
             style={{ resize: 'none' }}
             textarea
+            {...props}
           />
         )) || (
           <Input
@@ -67,7 +77,14 @@ export default function TextField({
             value={value}
             type={type}
             onChange={onChange}
+            isFieldInvalid={isFieldInvalid}
+            {...props}
           />
+      )}
+      {isFieldInvalid && (
+        <Text variant="errorFormText" display="block" marginTop="4px">
+          {error}
+        </Text>
       )}
     </InputWrapper>
   );
@@ -79,6 +96,8 @@ TextField.defaultProps = {
   value: '',
   textarea: false,
   onChange: null,
+  error: '',
+  isTouched: false,
 };
 
 TextField.propTypes = {
@@ -89,4 +108,6 @@ TextField.propTypes = {
   onChange: PropTypes.func,
   type: PropTypes.string,
   textarea: PropTypes.bool,
+  error: PropTypes.string,
+  isTouched: PropTypes.bool,
 };
