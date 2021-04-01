@@ -1,6 +1,6 @@
 {
-  "name": "Camila Cruz - Developer",
-  "short_name": "Portfólio e blog da desenvolvedora brasileira Camila Cruz",
+  "name": "teste",
+  "description": "mais um teste",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",
@@ -13,7 +13,9 @@
       "type": "image/png"
     }
   ],
+  "start_url": "/",
   "theme_color": "#ffd879",
   "background_color": "#F9F9F9",
-  "display": "standalone"
+  "display": "standalone",
+  "prefer_related_applications": false
 }
