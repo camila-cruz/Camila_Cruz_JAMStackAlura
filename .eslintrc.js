@@ -2,7 +2,7 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
-    'cypress/global': true,
+    'cypress/globals': true,
   },
   extends: [
     'plugin:cypress/recommended',

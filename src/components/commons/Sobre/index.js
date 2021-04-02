@@ -96,6 +96,7 @@ export default function Sobre({ invertColor }) {
               <Text variant="strong"> E aí, let&apos;s code together?</Text>
             </Text>
             <Button
+              id="btnContato"
               variant={invertColor ? 'tertiary' : 'primary'}
               marginTop="32px"
               onClick={() => websitePageContext.toggleModal()}
