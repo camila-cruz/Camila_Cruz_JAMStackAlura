@@ -13,6 +13,7 @@ jobs:
   # Configuração do eslint (linter)
   lint:
     # The type of runner that the job will run on
+    name: Linter
     runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
@@ -49,3 +50,25 @@ jobs:
         run: |
           npm install -g @lhci/cli@0.7.x
           lhci autorun
+
+  # Configuração dos testes de integração
+  integration_tests:
+    name: Integration Tests
+    runs-on: ubuntu-latest # The type of runner that the job will run on
+    steps: # Steps represent a sequence of tasks that will be executed as part of the job
+      # [Pre Build-step]
+      - uses: actions/checkout@v2 ## Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '14.15.0'
+
+      # ####################
+
+      # Commands that will run:
+      - name: Install Packages
+        run: npm install
+
+      - name: Run Integration Tests
+        run: |
+          npm config set scripts-prepend-node-path auto
+          yarn test:integration:build 
