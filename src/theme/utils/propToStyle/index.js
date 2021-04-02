@@ -41,6 +41,7 @@ export function propToStyle(propName) {
         }),
       });
     }
-    throw new Error('O valor especificado não é um tipo de argumento válido para a função');
+    // throw new Error('O valor especificado não é um tipo de argumento válido para a função');
+    return null;
   };
 }

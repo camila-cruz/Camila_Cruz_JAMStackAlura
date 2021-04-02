@@ -58,13 +58,14 @@ describe('propToStyle()', () => {
   });
 
   describe('when it receives an invalid argument', () => {
-    test('it should throw an error', () => {
+    test('it should return a null value', () => {
       const cssProp = 'margin';
       const componentProps = 'top: 10px';
 
       const resultingFunction = propToStyle(cssProp);
+      const resultingStyle = resultingFunction(componentProps);
 
-      expect(() => resultingFunction(componentProps)).toThrowError();
+      expect(resultingStyle).toBe(null);
     });
   });
 });
