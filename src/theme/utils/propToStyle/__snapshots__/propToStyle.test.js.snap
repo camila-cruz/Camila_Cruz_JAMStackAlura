@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`propToStyle() when it receives an object with breakpoints it should return a breakpoints object with the one specified breakpoint 1`] = `
+Array [
+  Array [
+    "@media screen and (min-width:",
+    "992",
+    "px){",
+    "color: acqua;",
+    "}",
+  ],
+]
+`;
+
+exports[`propToStyle() when it receives an object with breakpoints it should return a breakpoints object with two or more of the specified breakpoints 1`] = `
+Array [
+  Array [
+    "@media screen and (min-width:",
+    "0",
+    "px){",
+    "width: 200px;",
+    "}",
+  ],
+  Array [
+    "@media screen and (min-width:",
+    "768",
+    "px){",
+    "width: 600px;",
+    "}",
+  ],
+]
+`;

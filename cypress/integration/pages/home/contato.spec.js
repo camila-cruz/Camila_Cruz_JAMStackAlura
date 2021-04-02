@@ -1,20 +1,23 @@
 /// <reference types="cypress" />
 
+import FormContatoPageObject from '../../../../src/components/patterns/FormContato/FormContato.pageObject';
+
 describe('/pages/index', () => {
   describe('when the user fills and submits the contact form', () => {
     it('shows a message', () => {
       cy.intercept('https://contact-form-api-jamstack.herokuapp.com/message')
         .as('contactSubmission');
 
-      cy.visit('/');
+      const contactForm = new FormContatoPageObject(cy);
 
-      cy.get('#btnContato').click();
-
-      cy.get('input[name="name"]').type('Astrogildo');
-      cy.get('input[name="email"]').type('astrogildo@nasa.com');
-      cy.get('textarea[name="message"]').type('Esse teste tem que passar!');
-
-      cy.get('button[type="submit"]').click();
+      contactForm
+        .acessaForm()
+        .preencheForm({
+          name: 'Astrogildo',
+          email: 'astrogildo@nasa.com',
+          message: 'Esse teste tem que passar!',
+        })
+        .enviaForm();
 
       cy.wait('@contactSubmission')
         .then(() => {
