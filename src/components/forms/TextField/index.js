@@ -58,6 +58,7 @@ export default function TextField({
             id={id}
             value={value}
             onChange={onChange}
+            placeholder={placeholder}
             isFieldInvalid={isFieldInvalid}
             rows={10}
             style={{ resize: 'none' }}
@@ -82,6 +83,7 @@ export default function TextField({
           display="block"
           marginTop="4px"
           action="error"
+          role="alert"
         >
           {error}
         </Text>
