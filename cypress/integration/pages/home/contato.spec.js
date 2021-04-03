@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-import FormContatoPageObject from '../../../../src/components/patterns/FormContato/FormContato.pageObject';
+import HomeScreenPageObject from '../../../../src/components/screens/HomeScreen/HomeScreen.pageObject';
 
 describe('/pages/index', () => {
   describe('when the user fills and submits the contact form', () => {
@@ -8,16 +8,16 @@ describe('/pages/index', () => {
       cy.intercept('https://contact-form-api-jamstack.herokuapp.com/message')
         .as('contactSubmission');
 
-      const contactForm = new FormContatoPageObject(cy);
+      const homeScreen = new HomeScreenPageObject(cy);
 
-      contactForm
-        .acessaForm()
-        .preencheForm({
+      homeScreen
+        .acessaFormContato()
+        .preencheFormContato({
           name: 'Astrogildo',
           email: 'astrogildo@nasa.com',
           message: 'Esse teste tem que passar!',
         })
-        .enviaForm();
+        .enviaFormContato();
 
       cy.wait('@contactSubmission')
         .then(() => {
