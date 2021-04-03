@@ -1,0 +1,96 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TextField /> renders a textarea 1`] = `
+.c0 {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.c1 {
+  width: 100%;
+  height: 48px;
+  border: 1px solid #512919;
+  border-radius: 10px;
+  padding: 14px 6px;
+  margin-top: 4px;
+  outline: 0;
+  height: 80px;
+}
+
+.c1:focus {
+  box-shadow: 0 0 3pt 1pt #512919;
+}
+
+<textarea
+  class="c0 c1"
+  id="message"
+  name="message"
+  placeholder="Deixe uma mensagem"
+  rows="10"
+  style="resize: none;"
+/>
+`;
+
+exports[`<TextField /> when the field is invalid and has been touched an error should be displayed below it 1`] = `
+.c0 {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.c1 {
+  width: 100%;
+  height: 48px;
+  border: 1px solid #512919;
+  border-radius: 10px;
+  padding: 14px 6px;
+  margin-top: 4px;
+  outline: 0;
+  border-color: #d63031;
+}
+
+.c1:focus {
+  box-shadow: 0 0 3pt 1pt #512919;
+}
+
+<input
+  class="c0 c1"
+  id="email"
+  name="email"
+  placeholder="E-mail"
+  type="email"
+  value="emailaleatorio.com"
+/>
+`;
+
+exports[`<TextField /> when the field is invalid and untouched no errors should be displayed 1`] = `
+.c0 {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.c1 {
+  width: 100%;
+  height: 48px;
+  border: 1px solid #512919;
+  border-radius: 10px;
+  padding: 14px 6px;
+  margin-top: 4px;
+  outline: 0;
+}
+
+.c1:focus {
+  box-shadow: 0 0 3pt 1pt #512919;
+}
+
+<input
+  class="c0 c1"
+  id="nome"
+  name="name"
+  placeholder="Nome"
+  type="text"
+  value=""
+/>
+`;
