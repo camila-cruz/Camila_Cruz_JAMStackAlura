@@ -1,69 +1,16 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
+/* eslint-disable react/prop-types */
+/* eslint-disable react/jsx-props-no-spreading */
 import React, { useState } from 'react';
-import styled from 'styled-components';
 import { Lottie } from '@crello/react-lottie';
 import * as yup from 'yup';
-import { Grid } from '../../foundation/layout/Grid';
 import { Box } from '../../foundation/layout/Box';
 import { Button } from '../../commons/Button';
 import TextField from '../../forms/TextField';
 import Text from '../../foundation/Text';
 import { contactService } from '../../../services/contact';
 import { useForm } from '../../../infra/hooks/forms/useForm';
-
-import loadingAnimation from './animations/loading.json';
-import successAnimation from './animations/success.json';
-import errorAnimation from './animations/error.json';
-
-const FormWrapper = styled.div`
-  position: relative;
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  align-self: center;
-
-  padding-top: 80px;
-  padding-bottom: 80px;
-
-  background-color: ${({ theme }) => theme.mainUi.background.light.primary};
-  color: ${({ theme }) => theme.mainUi.text.light.primary};
-
-  max-width: 600px;
-  /* 
-  height: 100%;
-  clip-path: polygon(25% 10%, 75% 10%, 100% 50%, 75% 90%, 25% 90%, 0% 50%); */
-
-  & > form {
-    min-width: 350px;
-    width: auto;
-    max-width: 400px;
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-`;
-
-const formStates = {
-  DEFAULT: {
-    animation: '',
-    buttonText: 'Enviar mensagem',
-  },
-  LOADING: {
-    animation: loadingAnimation,
-    text: 'Aguarde',
-  },
-  DONE: {
-    animation: successAnimation,
-    text: 'Mensagem enviada!',
-    buttonText: 'Nova mensagem',
-  },
-  ERROR: {
-    animation: errorAnimation,
-    text: 'Houve um erro!',
-    buttonText: 'Tente novamente',
-  },
-};
+import formStates from './utils/formStates';
+import FormWrapper from './FormWrapper';
 
 const messageSchema = yup.object().shape({
   name: yup
@@ -77,12 +24,18 @@ const messageSchema = yup.object().shape({
   message: yup
     .string()
     .required('Digite a sua mensagem')
-    .min(10, 'A mensagem precisa ter pelo menos 10 caracteres'),
+    .min(5, 'A mensagem precisa ter pelo menos 5 caracteres'),
 });
 
-function FormContent() {
-  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
-  const [submissionStatus, setSubmissionStatus] = useState(formStates.DEFAULT);
+export default function FormContato({
+  CloseButton,
+  onSubmit,
+  formSubmission = false,
+  formState = formStates.DEFAULT,
+  props,
+}) {
+  const [isFormSubmitted, setIsFormSubmitted] = useState(formSubmission);
+  const [submissionStatus, setSubmissionStatus] = useState(formState);
 
   const initialValues = {
     name: '',
@@ -119,21 +72,23 @@ function FormContent() {
   }
 
   return (
-    <>
+    <FormWrapper {...props}>
+      <CloseButton />
       {(isFormSubmitted && (
         <Box
           display="flex"
           flexDirection="column"
           alignItems="center"
           minHeight="300px"
+          role="alert"
         >
           <Lottie
             width="150px"
             height="150px"
             className="lottie-container basic"
             config={{
-              animationData: submissionStatus.animation,
-              loop: false,
+              animationData: submissionStatus.feedback.animation,
+              loop: submissionStatus.feedback.loop,
               autoplay: true,
             }}
           />
@@ -145,7 +100,7 @@ function FormContent() {
           )}
         </Box>
       )) || (submissionStatus === formStates.DEFAULT && (
-        <form onSubmit={form.handleSubmit}>
+        <form onSubmit={onSubmit || form.handleSubmit}>
           <Text as="h2" variant="h2" size={3} marginBottom="40px">Envie sua mensagem</Text>
 
           <div>
@@ -155,6 +110,7 @@ function FormContent() {
                 type="text"
                 name="name"
                 id="name"
+                placeholder="Seu nome"
                 value={form.values.name}
                 error={form.errors.name}
                 isTouched={form.isTouched.name}
@@ -171,6 +127,7 @@ function FormContent() {
                 type="email"
                 name="email"
                 id="email"
+                placeholder="Seu melhor e-mail"
                 value={form.values.email}
                 error={form.errors.email}
                 isTouched={form.isTouched.email}
@@ -187,6 +144,7 @@ function FormContent() {
                 textarea
                 name="message"
                 id="message"
+                placeholder="Sua mensagem"
                 value={form.values.message}
                 error={form.errors.message}
                 isTouched={form.isTouched.message}
@@ -205,29 +163,6 @@ function FormContent() {
           </Button>
         </form>
       ))}
-    </>
-  );
-}
-
-// eslint-disable-next-line react/prop-types
-export default function FormContato({ CloseButton, props }) {
-  return (
-    <Grid.Row
-      marginLeft={0}
-      marginRight={0}
-      flex={1}
-      justifyContent="center"
-    >
-      <Grid.Col
-        value={{ xs: 12, md: 7, lg: 5 }}
-        alignSelf="center"
-      >
-        {/* eslint-disable-next-line react/jsx-props-no-spreading */}
-        <FormWrapper {...props}>
-          <CloseButton />
-          <FormContent />
-        </FormWrapper>
-      </Grid.Col>
-    </Grid.Row>
+    </FormWrapper>
   );
 }
