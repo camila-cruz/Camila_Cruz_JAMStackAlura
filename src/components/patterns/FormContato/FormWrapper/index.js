@@ -34,7 +34,7 @@ const FormBase = styled.div`
 }
 `;
 
-export default function FormWrapper({ children, props }) {
+export default function FormWrapper({ children, ...props }) {
   return (
     <Grid.Row
       marginLeft={0}
