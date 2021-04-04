@@ -1,0 +1,337 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FormContato /> when the user fills the form with valid data a loading animation is displayed 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-height: 300px;
+}
+
+.c1 {
+  font-size: 32px;
+  line-height: normal;
+}
+
+@media screen and (min-width:0px) {
+
+}
+
+@media screen and (min-width:768px) {
+
+}
+
+@media screen and (min-width:992px) {
+
+}
+
+<div
+  class="c0"
+  display="flex"
+  role="alert"
+>
+  <div
+    class="lottie-container basic"
+    style="width: 150px; height: 150px;"
+  >
+    <svg
+      height="172"
+      preserveAspectRatio="xMidYMid meet"
+      style="width: 100%; height: 100%; transform: translate3d(0,0,0);"
+      viewBox="0 0 172 172"
+      width="172"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <defs>
+        <clippath
+          id="__lottie_element_2"
+        >
+          <rect
+            height="172"
+            width="172"
+            x="0"
+            y="0"
+          />
+        </clippath>
+      </defs>
+      <g
+        clip-path="url(#__lottie_element_2)"
+      >
+        <g
+          opacity="1"
+          style="display: block;"
+          transform="matrix(0.26875001192092896,0,0,0.26875001192092896,86,86)"
+        >
+          <g
+            opacity="1"
+            transform="matrix(1,0,0,1,0,0)"
+          >
+            <path
+              d=" M0,-180 C3.7960000038146973,-180 7.565000057220459,-179.8820037841797 11.303000450134277,-179.64999389648438"
+              fill-opacity="0"
+              stroke="rgb(244,156,16)"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-opacity="1"
+              stroke-width="36"
+            />
+          </g>
+        </g>
+        <g
+          opacity="1"
+          style="display: block;"
+          transform="matrix(0.26875001192092896,0,0,0.26875001192092896,86,86)"
+        >
+          <g
+            opacity="1"
+            transform="matrix(-1,0,0,-1,0,0)"
+          >
+            <path
+              d=" M0,-100 C2.1089999675750732,-100 4.203000068664551,-99.93499755859375 6.28000020980835,-99.80599975585938"
+              fill-opacity="0"
+              stroke="rgb(219,88,11)"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-opacity="1"
+              stroke-width="36"
+            />
+          </g>
+        </g>
+      </g>
+    </svg>
+  </div>
+  <h2
+    class="c1"
+    size="1"
+  >
+    Aguarde
+  </h2>
+</div>
+`;
+
+exports[`<FormContato /> when the user fills the form with valid data when the submission completes a feedback message is displayed 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-height: 300px;
+}
+
+.c2 {
+  width: 200px;
+  height: 48px;
+  font-size: 16px;
+  font-weight: 900;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: 0;
+  border-radius: 8px;
+  background-color: #512919;
+  color: #F3CF77;
+  margin-top: 20px;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+.c2:hover {
+  background-color: #fff4b2;
+  color: #512919;
+}
+
+.c1 {
+  font-size: 32px;
+  line-height: normal;
+}
+
+@media screen and (min-width:0px) {
+
+}
+
+@media screen and (min-width:768px) {
+
+}
+
+@media screen and (min-width:992px) {
+
+}
+
+<div
+  class="c0"
+  display="flex"
+  role="alert"
+>
+  <div
+    class="lottie-container basic"
+    style="width: 150px; height: 150px;"
+  >
+    <svg
+      height="200"
+      preserveAspectRatio="xMidYMid meet"
+      style="width: 100%; height: 100%; transform: translate3d(0,0,0);"
+      viewBox="0 0 200 200"
+      width="200"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <defs>
+        <clippath
+          id="__lottie_element_10"
+        >
+          <rect
+            height="200"
+            width="200"
+            x="0"
+            y="0"
+          />
+        </clippath>
+      </defs>
+      <g
+        clip-path="url(#__lottie_element_10)"
+      >
+        <g
+          style="display: none;"
+        >
+          <g>
+            <path />
+          </g>
+        </g>
+        <g
+          opacity="1"
+          style="display: block;"
+          transform="matrix(1.0050300359725952,0,0,1.0050300359725952,102.75800323486328,103.76300048828125)"
+        >
+          <g
+            opacity="1"
+            transform="matrix(0.9776999950408936,0,0,0.9776999950408936,-2.74399995803833,-3.74399995803833)"
+          >
+            <path
+              d="M0 0"
+              fill-opacity="0"
+              stroke="rgb(96,191,131)"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-opacity="1"
+              stroke-width="6"
+            />
+          </g>
+        </g>
+        <g
+          opacity="1"
+          style="display: block;"
+          transform="matrix(0.7477700114250183,0,0,0.7477700114250183,100,99.625)"
+        >
+          <g
+            opacity="1"
+            transform="matrix(0.9924899935722351,0,0,0.9763200283050537,0.3330000042915344,1)"
+          >
+            <path
+              d="M0 0"
+              fill-opacity="0"
+              stroke="rgb(96,191,131)"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-opacity="1"
+              stroke-width="8"
+            />
+          </g>
+        </g>
+        <g
+          opacity="1"
+          style="display: block;"
+          transform="matrix(0.7477700114250183,0,0,0.7477700114250183,100,99.625)"
+        >
+          <g
+            opacity="1"
+            transform="matrix(0.9924899935722351,0,0,0.9763200283050537,0.3330000042915344,1)"
+          >
+            <path
+              d="M0 0"
+              fill-opacity="0"
+              stroke="rgb(96,191,131)"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-opacity="1"
+              stroke-width="8"
+            />
+          </g>
+          <g
+            opacity="1"
+            transform="matrix(1,0,0,1,0,0)"
+          >
+            <path
+              d=" M-189.21600341796875,26.12700080871582"
+              fill-opacity="0"
+              stroke="rgb(96,191,131)"
+              stroke-linecap="butt"
+              stroke-linejoin="miter"
+              stroke-miterlimit="4"
+              stroke-opacity="1"
+              stroke-width="8"
+            />
+          </g>
+        </g>
+      </g>
+    </svg>
+  </div>
+  <h2
+    class="c1"
+    size="1"
+  >
+    Mensagem enviada!
+  </h2>
+  <button
+    class="c2"
+  >
+    Nova mensagem
+  </button>
+</div>
+`;
