@@ -5,7 +5,7 @@ import Text from '../../foundation/Text';
 import Link from '../Link';
 
 // eslint-disable-next-line react/prop-types
-export default function Card({ title, image, text, link, destaque }) {
+export default function Card({ title, image, text, link, destaque, onClick }) {
   return (
     <>
       {(destaque === true && (
@@ -34,12 +34,14 @@ export default function Card({ title, image, text, link, destaque }) {
           </div>
         </CardWrapper.CardDestaque>
       )) || (
-        <CardWrapper>
+        <CardWrapper
+          onClick={onClick}
+        >
           <CardWrapper.CardImage
-            as="a"
+            // as="a"
             href={link}
-            target="_blank"
-            rel="noopener noreferrer"
+            // target="_blank"
+            // rel="noopener noreferrer"
             style={{ textDecoration: 'none' }}
           >
             <img src={image} alt={`Imagem do projeto ${title}`} />

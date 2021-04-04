@@ -14,27 +14,27 @@ export function propToStyle(propName) {
 
     if (typeof propValue === 'object') {
       return breakpointsMedia({
-        ...(propValue.xs && {
+        ...('xs' in propValue && {
           xs: {
             [propName]: propValue.xs,
           },
         }),
-        ...(propValue.sm && {
+        ...('sm' in propValue && {
           sm: {
             [propName]: propValue.sm,
           },
         }),
-        ...(propValue.md && {
+        ...('md' in propValue && {
           md: {
             [propName]: propValue.md,
           },
         }),
-        ...(propValue.lg && {
+        ...('lg' in propValue && {
           lg: {
             [propName]: propValue.lg,
           },
         }),
-        ...(propValue.xl && {
+        ...('xl' in propValue && {
           xl: {
             [propName]: propValue.xl,
           },
