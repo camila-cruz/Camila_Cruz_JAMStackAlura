@@ -6,20 +6,24 @@ const messageMock = {
   message: 'Olá, mundo!',
 };
 
-async function HttpClientMock() {
-  return messageMock;
-}
+const HttpClientMock = {
+  async post() {
+    return messageMock;
+  },
+};
 
-async function HttpClientMockError() {
-  return {
-    data: {
-      ok: false,
-    },
-    err: {
-      message: 'Falha na conexão',
-    },
-  };
-}
+const HttpClientMockError = {
+  async post() {
+    return {
+      data: {
+        ok: false,
+      },
+      err: {
+        message: 'Falha na conexão',
+      },
+    };
+  },
+};
 
 describe('contactService', () => {
   describe('when a user tries to send a message', () => {

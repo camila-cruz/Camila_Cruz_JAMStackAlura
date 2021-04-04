@@ -1,6 +1,7 @@
 import React from 'react';
 import websitePageHOC from '../../src/components/wrappers/WebsitePage/hoc';
 import ProjectScreen from '../../src/components/screens/ProjectScreen';
+import { githubService } from '../../src/services/githubService';
 
 function ProjectPage({
   name,
@@ -29,11 +30,13 @@ ProjectPage.propTypes = ProjectScreen.propTypes;
 export default websitePageHOC(ProjectPage);
 
 export async function getStaticProps({ params }) {
-  const repo = await fetch(`https://api.github.com/repos/camila-cruz/${params.projeto}`)
-    .then(async (res) => {
-      const resposta = await res.json();
-      return resposta;
-    });
+  // const repo = await fetch(`https://api.github.com/repos/camila-cruz/${params.projeto}`)
+  //   .then(async (res) => {
+  //     const resposta = await res.json();
+  //     return resposta;
+  //   });
+
+  const repo = await githubService.getRepoByName(params.projeto);
 
   return {
     props: {
@@ -54,11 +57,7 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  const repos = await fetch('https://api.github.com/users/camila-cruz/repos')
-    .then(async (res) => {
-      const resposta = await res.json();
-      return resposta;
-    });
+  const repos = await githubService.getAllReposFromUser();
 
   const paths = repos
     .filter((repo) => !repo.fork && repo.description && !repo.description.includes('My'))

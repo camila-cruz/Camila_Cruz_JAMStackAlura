@@ -7,7 +7,7 @@ import { Box } from '../../foundation/layout/Box';
 import { Button } from '../../commons/Button';
 import TextField from '../../forms/TextField';
 import Text from '../../foundation/Text';
-import { contactService } from '../../../services/contact';
+import { contactService } from '../../../services/contactService';
 import { useForm } from '../../../infra/hooks/forms/useForm';
 import formStates from './utils/formStates';
 import FormWrapper from './FormWrapper';
