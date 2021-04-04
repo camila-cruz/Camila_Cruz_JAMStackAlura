@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled, { css } from 'styled-components';
 import { breakpointsMedia } from '../../../theme/utils/breakpointsMedia';
 import Card from '../../commons/Card';
@@ -7,6 +7,7 @@ import { Grid } from '../layout/Grid';
 
 const cards = [
   {
+    id: 1,
     title: 'The Blacklist: The List',
     image: '/images/projetos/the-blacklist.webp',
     text: 'A lista da série The Blacklist.',
@@ -14,6 +15,7 @@ const cards = [
     destaque: false,
   },
   {
+    id: 2,
     title: 'Sistema SOS Nova Vida',
     image: '/images/projetos/sos-nova-vida.webp',
     text: 'Sistema integrado com website para a SOS Nova Vida.',
@@ -21,6 +23,7 @@ const cards = [
     destaque: false,
   },
   {
+    id: 3,
     title: 'Anagram Board',
     image: '/images/projetos/anagram-board.webp',
     text: 'roque as letras de lugar e forme anagramas!',
@@ -28,6 +31,7 @@ const cards = [
     destaque: false,
   },
   {
+    id: 4,
     title: 'Inteligência Artificial',
     image: '/images/projetos/inteligencia-artificial.webp',
     text: 'Projetos e recursos para consulta e aprendizagem sobre IA.',
@@ -61,6 +65,12 @@ const WrapperProjetosBase = styled.main`
 `;
 
 export default function WrapperProjetos() {
+  const [destaque, setDestaque] = useState(4);
+
+  function handleDestaque(id) {
+    setDestaque(id);
+  }
+
   return (
     <WrapperProjetosBase>
       <Grid.Container>
@@ -75,7 +85,8 @@ export default function WrapperProjetos() {
         </Grid.Row>
         <Grid.Row order={{ xs: 2, md: 0 }}>
           {cards.map((card) => {
-            if (!card.destaque) {
+            // if (!card.destaque) {
+            if (card.id !== destaque) {
               return (
                 <Grid.Col
                   value={{
@@ -92,7 +103,8 @@ export default function WrapperProjetos() {
                     image={card.image}
                     text={card.text}
                     link={card.link}
-                    destaque={card.destaque}
+                    destaque={card.id === destaque}
+                    onClick={() => handleDestaque(card.id)}
                   />
                 </Grid.Col>
               );
@@ -102,7 +114,8 @@ export default function WrapperProjetos() {
         </Grid.Row>
         <Grid.Row order={1}>
           {cards.map((card) => {
-            if (card.destaque) {
+            // if (card.destaque) {
+            if (card.id === destaque) {
               return (
                 <Grid.Col
                   value={12}
@@ -115,7 +128,7 @@ export default function WrapperProjetos() {
                     image={card.image}
                     text={card.text}
                     link={card.link}
-                    destaque={card.destaque}
+                    destaque={card.id === destaque}
                   />
                 </Grid.Col>
               );

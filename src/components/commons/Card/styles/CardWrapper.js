@@ -31,6 +31,8 @@ CardWrapper.CardDefault = css`
   transition: 0.5s ease;
 
   &:hover {
+    cursor: pointer;
+    /* box-shadow: 0 4px 8px 0 #5129199e, 0 6px 20px 0 #51291952; */
     transform: scale(1.05);
 }
 `;
@@ -86,7 +88,7 @@ CardWrapper.CardDestaque = styled.div`
   flex-direction: column;
   justify-content: space-between;
 
-  max-width: 250px;
+  max-width: 300px;
   height: 300px;
 
   /* border: 1px solid black;
