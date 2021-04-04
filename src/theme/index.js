@@ -20,40 +20,56 @@ const colors = {
   },
 };
 
-const mainUi = {
+const light = {
   background: {
-    light: {
-      primary: colors.light.white,
-      secondary: colors.dark.yellow,
-      tertiary: colors.light.brown,
-    },
-    dark: {
-      primary: colors.light.purple,
-      secondary: '',
-    },
+    primary: colors.light.white,
+    secondary: colors.dark.yellow,
+    tertiary: colors.light.brown,
   },
   text: {
-    light: {
-      primary: colors.light.brown,
-      secondary: colors.light.purple,
-      tertiary: colors.light.yellow,
-    },
-    dark: {
-      primary: colors.dark.white,
-      secondary: '',
-    },
+    primary: colors.light.brown,
+    secondary: colors.light.purple,
+    tertiary: colors.light.yellow,
   },
 };
 
-const spacing = [8, 16, 32, 45, 64];
-const border = [6, 8, 12, 16];
+const dark = {
+  background: {
+    primary: colors.light.purple,
+    secondary: colors.dark.blue,
+    tertiary: colors.light.brown,
+  },
+  text: {
+    primary: colors.dark.white,
+    secondary: colors.light.lightYellow,
+    tertiary: colors.light.yellow,
+  },
+};
 
-const weight = {
-  light: 300,
-  semiLight: 400,
-  regular: 600,
-  bold: 700,
-  extraBold: 900,
+export const defaultTheme = {
+  spacing: [8, 16, 32, 45, 64],
+  border: [6, 8, 12, 16],
+  weight: {
+    light: 300,
+    semiLight: 400,
+    regular: 600,
+    bold: 700,
+    extraBold: 900,
+  },
+  actions: {
+    error: colors.dark.red,
+    warning: colors.dark.purple,
+    success: colors.dark.green,
+    info: colors.dark.blue,
+    disabled: '',
+  },
+  breakpoints: {
+    xs: 0,
+    sm: 480,
+    md: 768,
+    lg: 992,
+    xl: 1200,
+  },
 };
 
 const typography = {
@@ -77,60 +93,50 @@ const typography = {
   },
   paragraph: {
     fontFamily: '',
-    fontWeight: weight.light,
+    fontWeight: defaultTheme.weight.light,
     lineHeight: 1.8,
     size: [16, 14],
   },
   link: {
     fontFamily: '',
-    fontWeight: weight.bold,
+    fontWeight: defaultTheme.weight.bold,
     lineHeight: 'normal',
     size: [16, 14],
   },
   inputText: {
     fontFamily: '',
-    fontWeight: weight.regular,
+    fontWeight: defaultTheme.weight.regular,
     lineHeight: 'normal',
     size: [16, 14],
   },
   label: {
     fontFamily: '',
-    fontWeight: weight.regular,
+    fontWeight: defaultTheme.weight.regular,
     lineHeight: 'normal',
     size: [18],
   },
   buttonText: {
     fontFamily: '',
-    fontWeight: weight.extraBold,
+    fontWeight: defaultTheme.weight.extraBold,
     lineHeight: 'normal',
     size: [16, 14],
   },
   errorFormText: {
     fontFamily: '',
-    fontWeight: weight.regular,
+    fontWeight: defaultTheme.weight.regular,
     lineHeight: 'normal',
     size: [11],
   },
 };
 
-export default {
-  mainUi,
-  actions: {
-    error: colors.dark.red,
-    warning: colors.dark.purple,
-    success: colors.dark.green,
-    info: colors.dark.blue,
-    disabled: '',
-  },
-  breakpoints: {
-    xs: 0,
-    sm: 480,
-    md: 768,
-    lg: 992,
-    xl: 1200,
-  },
-  spacing,
-  border,
-  weight,
+export const lightTheme = {
+  ...defaultTheme,
   typography,
+  ...light,
+};
+
+export const darkTheme = {
+  ...defaultTheme,
+  typography,
+  ...dark,
 };
