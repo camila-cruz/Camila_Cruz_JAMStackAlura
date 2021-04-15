@@ -2,7 +2,7 @@ const colors = {
   light: {
     yellow: '#F3CF77',
     lightYellow: '#F6E8CA',
-    purple: '#B692C0', // #3C2959
+    purple: '#B692C0',
     blue: '#C1DEDC',
     brown: '#512919',
     lightBrown: '#64463A',
@@ -12,11 +12,14 @@ const colors = {
   dark: {
     yellow: '#FFD879',
     purple: '#BB7BAE',
+    darkPurple: '#3C2959',
     blue: '#21A4B5',
     brown: '#7F5045',
     green: '#98BA52',
     white: '#EFEFEF',
     red: '#d63031',
+    gray: '#35363a',
+    darkBlue: '#131729',
   },
 };
 
@@ -31,19 +34,23 @@ const light = {
     secondary: colors.light.purple,
     tertiary: colors.light.yellow,
   },
+  solidHoneycomb: 'yellow-honeycomb.svg',
+  emptyHoneycomb: 'gray-honeycomb-empty.svg',
 };
 
 const dark = {
   background: {
-    primary: colors.light.purple,
-    secondary: colors.dark.blue,
-    tertiary: colors.light.brown,
+    primary: colors.dark.darkBlue,
+    secondary: colors.dark.darkPurple,
+    tertiary: colors.dark.gray,
   },
   text: {
     primary: colors.dark.white,
     secondary: colors.light.lightYellow,
     tertiary: colors.light.yellow,
   },
+  solidHoneycomb: 'gray-honeycomb.svg',
+  emptyHoneycomb: 'yellow-honeycomb-empty.svg',
 };
 
 export const defaultTheme = {
