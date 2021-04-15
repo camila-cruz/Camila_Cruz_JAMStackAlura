@@ -12,7 +12,7 @@ const InputWrapper = styled.div`
 const Input = styled(Text)`
   width: 100%;
   height: 48px;
-  border: 1px solid ${({ theme }) => theme.mainUi.background.light.tertiary};
+  border: 1px solid ${({ theme }) => theme.background.tertiary};
   border-radius: 10px;
   padding: 14px 6px;
   margin-top: 4px;
@@ -24,7 +24,7 @@ const Input = styled(Text)`
   `};
 
   &:focus {
-    box-shadow: 0 0 3pt 1pt ${({ theme }) => theme.mainUi.background.light.tertiary};
+    box-shadow: 0 0 3pt 1pt ${({ theme }) => theme.background.tertiary};
   }
 `;
 

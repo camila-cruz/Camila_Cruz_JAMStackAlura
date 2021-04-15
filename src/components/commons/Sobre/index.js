@@ -12,14 +12,14 @@ const SobreBase = styled.div`
   ${({ invertColor }) => {
     if (invertColor) {
       return css`
-        background-color: ${({ theme }) => theme.mainUi.background.light.primary};
-        color: ${({ theme }) => theme.mainUi.text.light.primary};
+        background-color: ${({ theme }) => theme.background.primary};
+        color: ${({ theme }) => theme.text.primary};
       `;
     }
 
     return css`
-      background-color: ${({ theme }) => theme.mainUi.background.light.tertiary};
-      color: ${({ theme }) => theme.mainUi.text.dark.primary};
+      background-color: ${({ theme }) => theme.background.tertiary};
+      /* color: ${({ theme }) => theme.mainUi.text.dark.primary}; */
     `;
   }}
 `;

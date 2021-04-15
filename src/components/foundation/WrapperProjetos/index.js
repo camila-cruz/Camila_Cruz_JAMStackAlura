@@ -54,7 +54,7 @@ const WrapperProjetosBase = styled.main`
   })}
 
   /* background-color: ${({ theme }) => theme.mainUi.background.light.primary}; */
-  background: ${({ theme }) => theme.mainUi.background.light.primary} url('/images/gray-honeycomb-empty.svg') no-repeat right bottom;
+  background: ${({ theme }) => theme.background.primary} url('/images/gray-honeycomb-empty.svg') no-repeat right bottom;
   background-size: 300px auto;
 
   & > div {

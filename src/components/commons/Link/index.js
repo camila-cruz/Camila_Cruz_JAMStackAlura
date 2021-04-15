@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 const StyledLink = styled.a`
   text-decoration: none;
-  color: ${({ theme }) => theme.mainUi.text.light.primary};
+  color: ${({ theme }) => theme.text.primary};
 
   /* Efeito de hover */
   &:after {    
@@ -15,7 +15,7 @@ const StyledLink = styled.a`
     display: block;
     height: 2px;
     left: 50%;
-    background: ${({ theme }) => theme.mainUi.text.light.primary};
+    background: ${({ theme }) => theme.text.primary};
     transition: width 0.3s ease 0s, left 0.3s ease 0s;
     width: 0;
   }

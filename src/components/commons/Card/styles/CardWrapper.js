@@ -46,8 +46,8 @@ CardWrapper.CardTitle = styled.div`
   font-size: ${({ theme }) => theme.typography.h3.size[0]}px;
   font-weight: ${({ theme }) => theme.weight.bold};
 
-  background-color: ${({ theme }) => theme.mainUi.background.light.secondary};
-  color: ${({ theme }) => theme.mainUi.text.light.primary};
+  background-color: ${({ theme }) => theme.background.secondary};
+  color: ${({ theme }) => theme.text.primary};
 `;
 
 CardWrapper.CardDestaqueLabel = styled.div`
@@ -60,14 +60,14 @@ CardWrapper.CardDestaqueLabel = styled.div`
   font-size: ${({ theme }) => theme.typography.h3.size[0]}px;
   font-weight: ${({ theme }) => theme.weight.bold};
 
-  background-color: ${({ theme }) => theme.mainUi.background.light.tertiary};
-  color: ${({ theme }) => theme.mainUi.text.light.tertiary};
+  background-color: ${({ theme }) => theme.background.tertiary};
+  color: ${({ theme }) => theme.text.tertiary};
 `;
 
 CardWrapper.CardImage = styled.div`
   width: 100%;
   height: 100%;
-  border: 2px solid ${({ theme }) => theme.mainUi.background.light.secondary};
+  border: 2px solid ${({ theme }) => theme.background.secondary};
   
   & > img {
     height: 100%;
@@ -146,7 +146,7 @@ CardWrapper.CardDestaque = styled.div`
           & > a {
             display: inline-block;
             font-size: ${({ theme }) => theme.typography.paragraph.size[0]}px;
-            color: ${({ theme }) => theme.mainUi.text.light.primary};
+            color: ${({ theme }) => theme.text.primary};
             padding-top: 20px;
             text-decoration: none;
 

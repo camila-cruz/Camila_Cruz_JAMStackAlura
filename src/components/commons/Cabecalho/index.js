@@ -9,8 +9,8 @@ const CabecalhoBase = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: ${({ theme }) => theme.mainUi.background.light.secondary};
-  color: ${({ theme }) => theme.mainUi.text.light.primary};
+  background-color: ${({ theme }) => theme.background.secondary};
+  color: ${({ theme }) => theme.text.primary};
 
   position: -webkit-sticky; /* Safari support */
   position: sticky;

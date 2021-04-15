@@ -11,8 +11,8 @@ const CapaBase = styled.div`
   justify-content: center;
 
   /* background-color: ${({ theme }) => theme.mainUi.background.light.secondary}; */
-  color: ${({ theme }) => theme.mainUi.text.light.primary};
-  background: ${({ theme }) => theme.mainUi.background.light.secondary} url('/images/yellow-honeycomb.svg');
+  color: ${({ theme }) => theme.text.primary};
+  background: ${({ theme }) => theme.background.secondary} url('/images/${({ theme }) => theme.solidHoneycomb}');
 `;
 
 // eslint-disable-next-line react/prop-types

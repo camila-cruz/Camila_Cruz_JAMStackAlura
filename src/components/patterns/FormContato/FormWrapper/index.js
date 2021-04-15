@@ -17,8 +17,8 @@ const FormBase = styled.div`
   padding-top: 80px;
   padding-bottom: 80px;
 
-  background-color: ${({ theme }) => theme.mainUi.background.light.primary};
-  color: ${({ theme }) => theme.mainUi.text.light.primary};
+  background-color: ${({ theme }) => theme.background.primary};
+  color: ${({ theme }) => theme.text.primary};
 
   max-width: 600px;
   /* 

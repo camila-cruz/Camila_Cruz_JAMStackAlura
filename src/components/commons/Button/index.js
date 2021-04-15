@@ -12,8 +12,8 @@ export const Button = styled.button`
   border: 0;
   border-radius: 8px;
 
-  background-color: ${({ theme, variant }) => theme.mainUi.background.light[variant]};
-  color: ${({ theme, variant }) => theme.mainUi.text.light[variant]};
+  background-color: ${({ theme, variant }) => theme.background[variant]};
+  color: ${({ theme, variant }) => theme.text[variant]};
 
   ${({ fullWidth }) => fullWidth && css`
     width: 100%;
@@ -30,6 +30,6 @@ export const Button = styled.button`
 
   &:hover {
     background-color: #fff4b2;
-    color: ${({ theme }) => theme.mainUi.text.light.primary};
+    color: ${({ theme }) => theme.text.primary};
   }
 `;

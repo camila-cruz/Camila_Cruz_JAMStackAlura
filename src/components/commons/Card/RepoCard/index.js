@@ -16,7 +16,7 @@ const RepoCardBase = styled.div`
   font-weight: ${({ theme }) => theme.weight.bold};
 
   /* background-color: ${({ theme }) => theme.mainUi.background.light.secondary}; */
-  color: ${({ theme }) => theme.mainUi.text.light.primary};
+  color: ${({ theme }) => theme.text.primary};
 
 
   ${breakpointsMedia({
@@ -37,7 +37,7 @@ RepoCardBase.CardTitle = styled(CardWrapper.CardTitle)`
 `;
 
 RepoCardBase.Body = styled.div`
-  border: 2px solid ${({ theme }) => theme.mainUi.background.light.secondary};
+  border: 2px solid ${({ theme }) => theme.background.secondary};
 
   display: flex;
   flex-direction: column;
@@ -58,7 +58,7 @@ RepoCardBase.Body = styled.div`
 
   & > a {
     font-size: ${({ theme }) => theme.typography.paragraph.size[0]}px;
-    color: ${({ theme }) => theme.mainUi.text.light.primary};
+    color: ${({ theme }) => theme.text.primary};
     text-decoration: none;
     width: fit-content;
     align-self: center;

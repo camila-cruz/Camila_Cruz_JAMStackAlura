@@ -10,7 +10,7 @@ const CloseButtonWrapper = styled(Button)`
   height: 50px;
   width: 50px;
   border-radius: 50%;
-  color: ${({ theme }) => theme.mainUi.text.light.primary};
+  color: ${({ theme }) => theme.text.primary};
 
 `;
 
