@@ -1,11 +1,14 @@
 import React from 'react';
 import websitePageHOC from '../../src/components/wrappers/WebsitePage/hoc';
-import ProjectScreen from '../../src/components/screens/ProjectScreen';
+import ProjectScreen, { getContent } from '../../src/components/screens/ProjectScreen';
 import { githubService } from '../../src/services/githubService';
 
 function ProjectPage({
   name,
   description,
+  content,
+  image,
+  altImageText,
   forks,
   openIssues,
   watchers,
@@ -16,6 +19,9 @@ function ProjectPage({
     <ProjectScreen
       name={name}
       description={description}
+      content={content}
+      imageSrc={image}
+      altImageText={altImageText}
       forks={forks}
       openIssues={openIssues}
       watchers={watchers}
@@ -36,12 +42,18 @@ export async function getStaticProps({ params }) {
   //     return resposta;
   //   });
 
+  const { paginaProjeto } = await getContent(params.projeto);
   const repo = await githubService.getRepoByName(params.projeto);
 
   return {
     props: {
-      name: repo.name,
+      name: paginaProjeto.projetoTituloPagina,
       description: repo.description,
+      paginaProjeto,
+      content: paginaProjeto.projetoDescricao,
+      // title: paginaProjeto.projetoTituloPagina,
+      image: paginaProjeto.projetoImagem.url,
+      altImageText: paginaProjeto.projetoImagem.responsiveImage.alt,
       forks: repo.forks,
       openIssues: repo.open_issues,
       watchers: repo.watchers,
@@ -49,7 +61,7 @@ export async function getStaticProps({ params }) {
       url: repo.html_url,
       pageWrapperProps: {
         seoProps: {
-          headTitle: repo.name,
+          headTitle: paginaProjeto.projetoTituloPagina,
         },
       },
     },
