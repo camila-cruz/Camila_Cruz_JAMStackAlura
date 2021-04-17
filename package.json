@@ -20,6 +20,8 @@
     "@crello/react-lottie": "^0.0.11",
     "@styled-icons/octicons": "^10.28.0",
     "framer-motion": "^3.10.3",
+    "graphql": "^15.5.0",
+    "graphql-request": "^3.4.0",
     "next": "latest",
     "prop-types": "^15.7.2",
     "react": "^16.8.0",
