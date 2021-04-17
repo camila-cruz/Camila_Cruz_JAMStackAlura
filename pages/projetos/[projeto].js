@@ -7,7 +7,7 @@ function ProjectPage({
   name,
   description,
   content,
-  image,
+  imageSrc,
   altImageText,
   forks,
   openIssues,
@@ -20,7 +20,7 @@ function ProjectPage({
       name={name}
       description={description}
       content={content}
-      imageSrc={image}
+      imageSrc={imageSrc}
       altImageText={altImageText}
       forks={forks}
       openIssues={openIssues}
@@ -35,24 +35,22 @@ ProjectPage.propTypes = ProjectScreen.propTypes;
 
 export default websitePageHOC(ProjectPage);
 
-export async function getStaticProps({ params }) {
-  // const repo = await fetch(`https://api.github.com/repos/camila-cruz/${params.projeto}`)
-  //   .then(async (res) => {
-  //     const resposta = await res.json();
-  //     return resposta;
-  //   });
+export async function getStaticProps({ params, preview }) {
+  console.log('Preview: ', preview);
 
-  const { paginaProjeto } = await getContent(params.projeto);
+  const { paginaProjeto } = await getContent({
+    projeto: params.projeto,
+    preview,
+  });
   const repo = await githubService.getRepoByName(params.projeto);
 
   return {
     props: {
       name: paginaProjeto.projetoTituloPagina,
       description: repo.description,
-      paginaProjeto,
       content: paginaProjeto.projetoDescricao,
       // title: paginaProjeto.projetoTituloPagina,
-      image: paginaProjeto.projetoImagem.url,
+      imageSrc: paginaProjeto.projetoImagem.url,
       altImageText: paginaProjeto.projetoImagem.responsiveImage.alt,
       forks: repo.forks,
       openIssues: repo.open_issues,

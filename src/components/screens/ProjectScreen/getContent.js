@@ -1,6 +1,8 @@
 import { CMSGraphQLClient, gql } from '../../../infra/cms/CMSGraphQLClient';
 
-export async function getContent(projeto) {
+export async function getContent({ projeto, preview }) {
+  const client = CMSGraphQLClient({ preview });
+
   const query = gql`
     query {
       paginaProjeto(filter: {projetoNome: {eq: "${projeto}"}}) {
@@ -19,7 +21,7 @@ export async function getContent(projeto) {
 
   // const client = CMSGraphQLClient();
 
-  const projectInfo = await CMSGraphQLClient().query({ query });
+  const projectInfo = await client.query({ query });
 
   return projectInfo;
 }
