@@ -40,6 +40,7 @@ const ModeSwitcherBase = styled.a`
 `;
 
 export default function ModeSwitcher({ preview }) {
+  const key = process.env.NEXT_PREVIEW_MODE_KEY;
   const switcherAction = preview
     ? 'desativar'
     : 'ativar';
@@ -49,7 +50,10 @@ export default function ModeSwitcher({ preview }) {
     : 'preview';
 
   return (
-    <ModeSwitcherBase href={`/api/${url}`} preview={preview}>
+    <ModeSwitcherBase
+      href={`/api/${url}?key=${key}`}
+      preview={preview}
+    >
       Clique aqui para
       {' '}
       <span>{switcherAction}</span>
