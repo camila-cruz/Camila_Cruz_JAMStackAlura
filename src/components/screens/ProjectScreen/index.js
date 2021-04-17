@@ -10,6 +10,8 @@ import Link from '../../commons/Link';
 import { Grid } from '../../foundation/layout/Grid';
 import Text from '../../foundation/Text';
 import { Image } from '../../commons/Image';
+import { isStagingEnv } from '../../../infra/env/isStagingEnv';
+import ModeSwitcher from '../../commons/ModeSwitcher';
 
 export { getContent } from './getContent';
 
@@ -39,6 +41,7 @@ export default function ProjectScreen({
   watchers,
   stars,
   url,
+  previewMode,
 }) {
   return (
     <Grid.Container
@@ -48,6 +51,7 @@ export default function ProjectScreen({
       justifyContent="flex-start"
       padding="48px"
     >
+      {isStagingEnv && <ModeSwitcher preview={previewMode} />}
       <Grid.Row order={{ xs: 2, md: 0 }}>
         <Grid.Col
           value={12}
@@ -149,4 +153,5 @@ ProjectScreen.propTypes = {
   watchers: PropTypes.number.isRequired,
   stars: PropTypes.number.isRequired,
   url: PropTypes.string.isRequired,
+  previewMode: PropTypes.bool.isRequired,
 };

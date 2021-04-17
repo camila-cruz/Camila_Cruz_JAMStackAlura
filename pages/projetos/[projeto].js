@@ -14,6 +14,7 @@ function ProjectPage({
   watchers,
   stars,
   url,
+  previewMode,
 }) {
   return (
     <ProjectScreen
@@ -27,6 +28,7 @@ function ProjectPage({
       watchers={watchers}
       stars={stars}
       url={url}
+      previewMode={previewMode}
     />
   );
 }
@@ -36,8 +38,7 @@ ProjectPage.propTypes = ProjectScreen.propTypes;
 export default websitePageHOC(ProjectPage);
 
 export async function getStaticProps({ params, preview }) {
-  console.log('Preview: ', preview);
-
+  const previewMode = Boolean(preview);
   const { paginaProjeto } = await getContent({
     projeto: params.projeto,
     preview,
@@ -57,6 +58,7 @@ export async function getStaticProps({ params, preview }) {
       watchers: repo.watchers,
       stars: repo.stargazers_count,
       url: repo.html_url,
+      previewMode,
       pageWrapperProps: {
         seoProps: {
           headTitle: paginaProjeto.projetoTituloPagina,
