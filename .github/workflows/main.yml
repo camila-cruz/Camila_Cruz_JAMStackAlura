@@ -43,7 +43,7 @@ jobs:
       
       - name: Instala as dependências e faz o build do projeto
         env:
-          DATO_CMS_TOKEN: 9242fc75801a7f4d763083884a1e01
+          DATO_CMS_TOKEN: d4fce885be1cdcc680965baea2cb2e
         run: |
           npm install
           npm run build
@@ -99,7 +99,7 @@ jobs:
 
       - name: Run Integration Tests
         env:
-          DATO_CMS_TOKEN: 9242fc75801a7f4d763083884a1e01
+          DATO_CMS_TOKEN: d4fce885be1cdcc680965baea2cb2e
         run: |
           npm config set scripts-prepend-node-path auto
           yarn test:integration:build 
