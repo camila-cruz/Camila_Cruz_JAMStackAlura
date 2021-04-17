@@ -61,8 +61,7 @@ export async function getStaticProps({ params, preview }) {
       previewMode,
       pageWrapperProps: {
         seoProps: {
-          // headTitle: paginaProjeto.projetoTituloPagina,
-          headTitle: repo.name,
+          headTitle: paginaProjeto.projetoTituloPagina,
         },
       },
     },
