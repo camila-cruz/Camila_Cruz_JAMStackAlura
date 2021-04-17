@@ -9,8 +9,11 @@ import PropTypes from 'prop-types';
 import Link from '../../commons/Link';
 import { Grid } from '../../foundation/layout/Grid';
 import Text from '../../foundation/Text';
-import imagesArr from '../../../../db.json';
 import { Image } from '../../commons/Image';
+import { isStagingEnv } from '../../../infra/env/isStagingEnv';
+import ModeSwitcher from '../../commons/ModeSwitcher';
+
+export { getContent } from './getContent';
 
 function RepoInfo({ children }) {
   return (
@@ -31,14 +34,15 @@ RepoInfo.propTypes = {
 export default function ProjectScreen({
   name,
   description,
+  imageSrc,
+  altImageText,
   forks,
   openIssues,
   watchers,
   stars,
   url,
+  previewMode,
 }) {
-  const image = imagesArr.images.find((img) => img.title === name);
-
   return (
     <Grid.Container
       display="flex"
@@ -47,6 +51,7 @@ export default function ProjectScreen({
       justifyContent="flex-start"
       padding="48px"
     >
+      {isStagingEnv && <ModeSwitcher preview={previewMode} />}
       <Grid.Row order={{ xs: 2, md: 0 }}>
         <Grid.Col
           value={12}
@@ -127,8 +132,8 @@ export default function ProjectScreen({
           alignItems="center"
         >
           <Image
-            src={image.path}
-            alt={image.description}
+            src={imageSrc}
+            alt={altImageText}
             height={{ xs: '180px', sm: '220px', md: '300px' }}
             shadowed
           />
@@ -141,9 +146,12 @@ export default function ProjectScreen({
 ProjectScreen.propTypes = {
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
+  imageSrc: PropTypes.string.isRequired,
+  altImageText: PropTypes.string.isRequired,
   forks: PropTypes.number.isRequired,
   openIssues: PropTypes.number.isRequired,
   watchers: PropTypes.number.isRequired,
   stars: PropTypes.number.isRequired,
   url: PropTypes.string.isRequired,
+  previewMode: PropTypes.bool.isRequired,
 };

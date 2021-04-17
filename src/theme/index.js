@@ -8,6 +8,7 @@ const colors = {
     lightBrown: '#64463A',
     white: '#F9F9F9',
     red: '#ff7675',
+    gray: '#95a5a6',
   },
   dark: {
     yellow: '#FFD879',
@@ -17,6 +18,7 @@ const colors = {
     green: '#98BA52',
     white: '#EFEFEF',
     red: '#d63031',
+    gray: '#2c3e50',
   },
 };
 
@@ -120,7 +122,7 @@ export default {
     warning: colors.dark.purple,
     success: colors.dark.green,
     info: colors.dark.blue,
-    disabled: '',
+    disabled: colors.light.gray,
   },
   breakpoints: {
     xs: 0,

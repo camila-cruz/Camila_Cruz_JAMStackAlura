@@ -42,6 +42,8 @@ jobs:
           node-version: 12.x
       
       - name: Instala as dependências e faz o build do projeto
+        env:
+          DATO_CMS_TOKEN: d4fce885be1cdcc680965baea2cb2e
         run: |
           npm install
           npm run build
@@ -96,6 +98,8 @@ jobs:
         run: npm install
 
       - name: Run Integration Tests
+        env:
+          DATO_CMS_TOKEN: d4fce885be1cdcc680965baea2cb2e
         run: |
           npm config set scripts-prepend-node-path auto
           yarn test:integration:build 
