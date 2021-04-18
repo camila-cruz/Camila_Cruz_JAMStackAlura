@@ -33,14 +33,14 @@ const ModeSwitcherBase = styled.a`
       `;
     }
     return css`
-      background-color: white;
-      color: ${({ theme }) => theme.actions.info};
+      color: white;
+      background-color: ${({ theme }) => theme.actions.info};
     `;
   }}  
 `;
 
 export default function ModeSwitcher({ preview }) {
-  const key = process.env.NEXT_PREVIEW_MODE_KEY;
+  const key = process.env.NEXT_PUBLIC_PREVIEW_MODE_KEY;
   const switcherAction = preview
     ? 'desativar'
     : 'ativar';
