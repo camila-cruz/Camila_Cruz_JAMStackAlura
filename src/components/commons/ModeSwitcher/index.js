@@ -40,7 +40,7 @@ const ModeSwitcherBase = styled.a`
 `;
 
 export default function ModeSwitcher({ preview }) {
-  const key = process.env.NEXT_PREVIEW_MODE_KEY;
+  const key = process.env.NEXT_PUBLIC_PREVIEW_MODE_KEY;
   const switcherAction = preview
     ? 'desativar'
     : 'ativar';
