@@ -33,8 +33,8 @@ const ModeSwitcherBase = styled.a`
       `;
     }
     return css`
-      background-color: white;
-      color: ${({ theme }) => theme.actions.info};
+      color: white;
+      background-color: ${({ theme }) => theme.actions.info};
     `;
   }}  
 `;
